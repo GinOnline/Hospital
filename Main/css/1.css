@@ -1,0 +1,212 @@
+* {
+    
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+
+  
+}
+
+body {
+ 
+    background-color: #9a95a2;
+    /*Background Generator (muy bueno la verdad url: https://bgjar.com/)*/
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='900' preserveAspectRatio='none' viewBox='0 0 1440 900'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1568%26quot%3b)' fill='none'%3e%3crect width='1440' height='900' x='0' y='0' fill='url(%23SvgjsLinearGradient1569)'%3e%3c/rect%3e%3cpath d='M1030.809%2c1081.341C1089.941%2c1082.661%2c1145.36%2c1050.086%2c1174.077%2c998.378C1202.022%2c948.06%2c1193.891%2c887.95%2c1166.251%2c837.464C1137.288%2c784.562%2c1091.121%2c736.672%2c1030.809%2c736.696C970.527%2c736.72%2c923.316%2c784.063%2c895.55%2c837.57C870.097%2c886.618%2c871.398%2c943.899%2c898.209%2c992.218C925.903%2c1042.129%2c973.744%2c1080.067%2c1030.809%2c1081.341' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M177.064%2c1185.758C267.811%2c1186.26%2c369.684%2c1186.991%2c419.957%2c1111.441C474.248%2c1029.853%2c461.985%2c919.734%2c408.901%2c837.355C359.819%2c761.187%2c267.628%2c731.544%2c177.064%2c734.508C92.134%2c737.287%2c15.734%2c780.034%2c-29.902%2c851.715C-79.59%2c929.759%2c-109.948%2c1030.133%2c-61.22%2c1108.78C-14.102%2c1184.829%2c87.602%2c1185.263%2c177.064%2c1185.758' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1586.123%2c1082.002C1676.483%2c1081.38%2c1775.179%2c1063.622%2c1819.707%2c984.993C1863.803%2c907.127%2c1824.703%2c815.704%2c1781.22%2c737.494C1735.994%2c656.149%2c1679.051%2c570.037%2c1586.123%2c564.857C1486.408%2c559.299%2c1398.456%2c626.468%2c1349.328%2c713.419C1301.026%2c798.907%2c1293.83%2c905.636%2c1346.903%2c988.247C1396.519%2c1065.476%2c1494.331%2c1082.634%2c1586.123%2c1082.002' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M875.464%2c919.907C937.018%2c924.021%2c1004.559%2c911.235%2c1036.938%2c858.724C1070.522%2c804.258%2c1057.01%2c734.533%2c1023.307%2c680.14C991.492%2c628.795%2c935.867%2c598.21%2c875.464%2c598.123C814.904%2c598.036%2c755.259%2c626.213%2c726.882%2c679.713C699.931%2c730.524%2c717.242%2c790.463%2c747.5%2c839.377C775.917%2c885.315%2c821.567%2c916.304%2c875.464%2c919.907' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M178.777%2c960.838C219.974%2c960.16%2c255.78%2c933.294%2c274.581%2c896.63C291.851%2c862.951%2c284.79%2c823.814%2c265.843%2c791.049C246.922%2c758.33%2c216.559%2c732.002%2c178.777%2c730.956C139.309%2c729.863%2c103.261%2c752.133%2c82.936%2c785.983C61.965%2c820.909%2c57.772%2c864.15%2c77.353%2c899.874C97.674%2c936.947%2c136.506%2c961.533%2c178.777%2c960.838' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M791.998%2c555.793C873.451%2c552.243%2c916.86%2c469.623%2c958.07%2c399.275C999.977%2c327.736%2c1054.542%2c247.501%2c1015.414%2c174.405C975.088%2c99.071%2c877.1%2c81.356%2c791.998%2c89.034C719.92%2c95.537%2c665.879%2c147.018%2c628.974%2c209.272C591.105%2c273.154%2c567.189%2c347.737%2c598.803%2c414.935C635.166%2c492.228%2c706.659%2c559.513%2c791.998%2c555.793' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M310.997%2c707.476C350.995%2c708.847%2c391.359%2c691.519%2c410.753%2c656.511C429.664%2c622.374%2c419.835%2c581.126%2c399.417%2c547.868C380.066%2c516.348%2c347.982%2c493.757%2c310.997%2c494.023C274.434%2c494.286%2c242.801%2c517.325%2c224.751%2c549.123C206.945%2c580.49%2c205.171%2c618.379%2c222.423%2c650.055C240.461%2c683.173%2c273.307%2c706.184%2c310.997%2c707.476' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1135.497%2c815.597C1193.429%2c816.602%2c1236.857%2c769.14%2c1265.677%2c718.875C1294.309%2c668.937%2c1311.976%2c608.293%2c1282.811%2c558.664C1253.929%2c509.515%2c1192.5%2c496.699%2c1135.497%2c497.349C1079.892%2c497.983%2c1021.227%2c513.533%2c993.889%2c561.958C966.892%2c609.78%2c986.144%2c666.54%2c1012.914%2c714.489C1040.588%2c764.057%2c1078.736%2c814.612%2c1135.497%2c815.597' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M760.262%2c684.541C795.035%2c683.976%2c827.803%2c666.917%2c845.05%2c636.717C862.163%2c606.752%2c861.39%2c569.177%2c842.717%2c540.159C825.384%2c513.223%2c792.282%2c504.122%2c760.262%2c504.956C729.913%2c505.747%2c701.764%2c519.008%2c684.928%2c544.271C665.837%2c572.918%2c654.278%2c609.223%2c670.566%2c639.551C687.528%2c671.134%2c724.417%2c685.123%2c760.262%2c684.541' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M704.76%2c688.582C730.743%2c688.344%2c757.854%2c680.047%2c770.422%2c657.305C782.686%2c635.113%2c774.691%2c608.259%2c760.912%2c586.975C748.45%2c567.726%2c727.69%2c555.663%2c704.76%2c555.882C682.208%2c556.097%2c662.86%2c569.208%2c650.432%2c588.028C636.302%2c609.426%2c624.79%2c635.968%2c636.979%2c658.528C649.571%2c681.834%2c678.271%2c688.825%2c704.76%2c688.582' fill='rgba(33%2c 81%2c 131%2c 0.55)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1568'%3e%3crect width='1440' height='900' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='9.37%25' y1='-15%25' x2='90.63%25' y2='115%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1569'%3e%3cstop stop-color='%230e2a47' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(1%2c 54%2c 124%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");background-size: cover;
+background-repeat: no-repeat;
+    
+
+     
+
+}
+.title{
+    
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 4em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#create{
+    font-family: 'Roboto';    
+}
+
+.inicio{
+    font-family: 'Montserrat';
+    text-align: center;
+
+}
+
+.contenedor-form {
+    transition: 150ms;
+    background: rgba(0, 0, 0, 0.562);
+    max-width: 500px;
+    width: 100%;
+    margin: 48px auto;
+    border-radius: 15px;
+    color: #fff;
+    position: relative;
+    padding: 30px;
+
+}
+
+.contenedor-form .toggle {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 25px;
+    text-align: center;
+    border-top: 2px solid #c3d9d9;
+    border-bottom: 2px solid #c3d9d9;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.contenedor-form .toggle:hover {
+    border-top: 2px solid #265aa8;
+    border-bottom: 2px solid #265aa8;
+}
+
+.contenedor-form .toggle span {
+    letter-spacing: 1px;
+}
+
+.contenedor-form h2 {
+    margin: 0 0 28px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+}
+.contenedor-form input[type="text"],
+.contenedor-form input[type="password"],
+.contenedor-form input[type="email"],
+.contenedor-form input[type="number"] {
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 0 20px 0;
+    background-color: #00000080;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #c3d9d9;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight:normal;
+    transition: all .5s ease;
+}
+
+.contenedor-form select {
+
+
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 0 0 20px 0;
+    background-color: #00000080;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 4px solid #c3d9d9;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight:normal;
+    transition: all .5s ease;
+} 
+
+.contenedor-form input[type="text"]:focus,
+.contenedor-form input[type="password"]:focus,
+.contenedor-form input[type="email"]:focus {
+    border-bottom: 4px solid #0075d9;
+}
+
+.contenedor-form input[type="submit"] {
+    background: #204986;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Roboto;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .2s ease;
+    border-radius: 3px;
+    
+}
+
+.contenedor-form input[type="submit"]:hover {
+    background: rgb(18, 41, 117);
+}
+
+.contenedor-form .reset-password {
+    
+    border-radius: 24px;
+    background: #204986;
+    border-color: #ffffff;
+    border-width: 1px;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-style: solid;
+    border-bottom-right-radius: 5px;
+}
+
+.reset-password  {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.reset-password:hover  {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: rgb(18, 41, 117);
+}
+.contenedor-form .formulario {
+    display: none;
+    padding: 40px;
+}
+.contenedor-form:hover {
+    background-color: #000000b0;
+}
+
+.contenedor-form .formulario:nth-child(2) {
+    display: block;
+}
+
+.contenedor-form .formulario button{
+
+    background: #FF851B;
+    color: #FFF;
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Roboto;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .5s ease;
+
+
+}
+
+
+/*Boton + (agregar peticion)*/
+

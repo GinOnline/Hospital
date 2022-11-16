@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+body,
+button {
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --offcanvas-width: 200px;
+  --topNavbarHeight: 56px;
+}
+.sidebar-nav {
+  width: 12%;
+  background-color: #bfe0ec;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+}
+.sidebar-link .right-icon {
+  display: inline-flex;
+}
+.sidebar-link[aria-expanded="true"] .right-icon {
+  transform: rotate(180deg);
+}
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  }
+  main {
+    margin-left: var(--offcanvas-width);
+  }
+  /* this is to remove the backdrop */
+  .offcanvas-backdrop::before {
+    display: none;
+  }
+  .sidebar-nav {
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible !important;
+    height: calc(100% - var(--topNavbarHeight));
+    top: var(--topNavbarHeight);
+  }
+}
+
+.dashboardBox{
+  background-color: #EB6440;
+  border-radius: 10px;
+  width: 90%;
+  padding: 20px;
+  height: 600px;
+}
+
+.dashboardMT{
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.dashboardST{
+  font-size: 17px;
+  text-align: center;
+  margin-top: 5%;
+}
+.navbar-nav li{
+  overflow-y: hidden;
+}
+

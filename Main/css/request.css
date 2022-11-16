@@ -1,0 +1,180 @@
+*{
+    background-color: #142f64;
+    color: #87adcf;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+
+#p{
+    font-size: 50px;
+    font-family: 'Signika', sans-serif;
+}
+
+.fondoForm{
+    margin-top: -2.3vh;
+	margin-left: 27%;
+	background-color: #2c467a;
+	color: white;
+	border-radius: 10px;
+	height: 72vh;
+	width: 42%;
+	padding-left: 2%;
+	padding-right: 2%;
+    padding-top: 1%;
+}
+
+
+#seleccioneCurso{
+    background-color:#23355a;
+    color: #ffffff;
+    font-weight: 900;
+    border-color: hsl(214, 100%, 7%);
+    
+    border-radius: 10px;
+    height: 10%;
+    width: 97.5%;
+    text-align: center;
+   
+    margin-top: 4%;
+    margin-left: 2%;
+}
+
+#selectElemento{
+    background-color: transparent;
+    color: #ffffff;
+    border-width: 3px;
+    border-color: #ffffff;
+    border-radius: 10px;
+    height: 9.8%;
+    width: 70vh;
+    padding-left: 20px;
+    margin-left: 2%;
+    text-align: center;
+}
+
+#selectElemento::placeholder{
+    color:#cfcfcfbd;
+    font-weight: 900;
+}
+
+.inputRequest{
+    background-color: transparent;
+    color: #ffffff;
+    border-width: 3.2px;
+    border-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    height: 8%;
+    width: 80%;
+   
+    margin-left: 2%;
+    text-align: center;
+}
+
+.inputRequest::placeholder{
+    color:#cfcfcfbd;
+    font-weight: 900;
+}
+
+#inputTime{
+    background-color: transparent;
+    color: #ffffff;
+    border-width: 3.2px;
+    border-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    height: 40%;
+    width: 32vh;
+}
+
+#enviarBoton{
+    background-color: #3f8ad1;
+    color: #ffffff;
+    width: 25%;
+    height: 11%;
+    border-radius: 10px;
+    margin-left: 38%;
+    border-color: #072957;
+    transition: .3s;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+#enviarBoton:hover{
+    background-color: #2c70d4d5;
+    color: #ffffff;
+    border-color: #072957;
+    
+}
+
+#enviarBoton:active{
+    color: #2267c2d5;
+    background-color: #021124;
+    border-color: #072957;
+}
+
+#volverAtras{
+    font-size: 22px;
+    background-color: #02112400;
+    color: white;
+    text-decoration: none;
+}
+
+#volverBoth{
+    background-color: #072a5700;
+    margin-bottom: 4%;
+}
+
+#volverAtrasElemento{
+    color: white;
+    background-color: #02112400;
+}
+
+#volverAtrasElemento:hover{
+    color:red;
+    cursor: pointer;
+}
+
+#selectElemento:active, .inputRequest:active{
+    border-color: #021124;
+}
+
+.name_forms{
+    padding: 5px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    background-color: #2c467a;
+}
+.personal_info{
+    background-color: #2c467a;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.658);
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 15px 20px 15px 8px;
+    margin-top: 1.5vh;
+}
+.tool_info{
+    background-color: #2c467a;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.658);
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 15px 20px 15px 8px;
+    margin-top: 1.5vh;
+}
+
+label{
+    background-color: #2c467a;
+    color:#e5e5e5e4;
+}
+
+.error{
+
+    display: flex;
+    margin-left: 2vw;
+    margin-top: 1vh;
+    color: rgb(200, 60, 60);
+
+}

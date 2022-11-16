@@ -1,0 +1,171 @@
+a {
+    text-decoration: none;
+}
+
+:root{
+    --dt-padding: 12px;
+    --dt-padding-sm: 6px;
+    --dt-padding-xsm: 2px;
+    --dt-border-color: #ddd;
+    --dt-border-color-02: #ccc;
+    --dt-cell-color: #232323;
+    --dt-hover-color: #206e70;
+    --dt-sorted-color: rgba(0,0,0,0.1);
+    --dt-bg-color: #eee;
+    --dt-bg-active-button: #eee;
+    --dt-text-color-button: #222;
+    --dt-text-color-active-button: #000;
+}
+.datatable-container{
+    border: solid 1px var(--dt-border-color);
+    width: 490px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+.etiqueta_filtro{
+    
+    padding: 5px;
+    margin: 5px;
+    background-color: #626b6e;
+}
+
+
+.header-tools{
+    border-bottom: solid 1px #667173;
+    padding: var(--dt-padding);
+    display: flex;
+    align-items: baseline;
+    background-color: #1b1b20;
+    border-radius:20px 20px 0 0;
+    box-shadow: inset 16px 16px 43px #1d1f20,
+                inset -16px -16px 43px #212526;
+}
+
+.header-tools .tools ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+}
+.fitrar_text{
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+.header-tools .tools ul li{
+    display: inline-block;
+    margin: 0 var(--dt-padding-xsm);
+    align-items: baseline;
+}
+.header-tools .tools ul li span input{
+    vertical-align: middle;
+}
+.footer-tools{
+    padding: var(--dt-padding);
+    display: flex;
+    align-items: baseline;
+    background-color: #1a1b1c;
+    margin-top: -1.2%;
+    border-radius:0 0 20px 20px;
+    box-shadow: 1px 23px 82px -3px rgba(92,112,145,0.22) inset;
+    -webkit-box-shadow: 1px 23px 82px -3px rgba(92,112,145,0.22) inset;
+    -moz-box-shadow: 1px 23px 82px -3px rgba(92,112,145,0.22) inset;
+}
+#maxResultados{
+    margin-left: 12px;
+}
+.datatable-container .footer-tools .list-items{
+    width: 50%;
+}
+.datatable-container .footer-tools .pages{
+    margin-left: auto;
+    margin-right: 0;
+    width: 50%;
+   
+}
+.datatable-container .footer-tools .pages ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
+.datatable-container .footer-tools .pages ul li{
+    display: inline-block;
+    margin: 0;
+}
+.footer-tools .pages ul li button,
+.header-tools .tools ul li button{
+    color: var(--dt-text-color-button);
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+}
+.footer-tools .pages ul li button:hover,
+.header-tools .tools ul li button:hover{
+    background: var(--dt-bg-active-button);
+    color: var(--dt-text-color-active-button);
+}
+.footer-tools .pages ul li span.active{
+    background-color:  var(--dt-bg-color);
+    border-radius: 3px;
+}
+
+
+.header-tools .tools ul li button{
+    padding: var(--dt-padding-sm) var(--dt-padding);
+} 
+
+.datatable-container .datatable{
+    border-collapse: collapse;
+    /*table-layout: fixed;*/
+    width: 100%;
+}
+.datatable-container .datatable,
+.datatable-container .datatable th,
+.datatable-container .datatable td{
+    padding: var(--dt-padding) var(--dt-padding);
+}
+
+.datatable-container .datatable th{
+    font-weight: bolder;
+    text-align: left;
+    border-bottom: solid 1px var(--dt-border-color);
+    cursor: pointer;
+}
+.datatable-container .datatable th:hover{
+    background-color: var(--dt-hover-color);
+}
+
+.datatable-container .datatable td{
+    border-bottom: solid 1px var(--dt-border-color);
+}
+.datatable-container .datatable tbody tr:nth-child(even){
+    background-color: var(--dt-cell-color);
+}
+.datatable-container .datatable tbody tr:hover{
+    background-color: var(--dt-hover-color);
+}
+.datatable-container .datatable tbody tr .table-checkbox{
+    width: 1px;
+}
+
+.datatable-container .datatable .cell-sorted{
+    background-color: var(--dt-sorted-color);
+}
+.datatable .header-sorted{
+    background-color: var(--dt-sorted-color);
+}
+.n-entries{
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.list-items{
+    font-size: 20px;
+}

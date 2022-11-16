@@ -1,0 +1,140 @@
+body{
+    background-color: rgb(13,0,36);
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    
+}
+
+
+#rectanguloContenedor{
+    background-color: rgba(59, 11, 104, 0.489);
+    margin-left: 30%;
+    width: 45%;
+    height: 420px;
+    padding-left: 2%;padding-left: 2%;
+    padding-right: 4%;
+    overflow: auto;
+    border-radius: 15px;
+    box-shadow: 19px 20px 28px -1px rgba(0,0,0,0.65);
+    -webkit-box-shadow: 19px 20px 28px -1px rgba(0,0,0,0.65);
+    -moz-box-shadow: 19px 20px 28px -1px rgba(0,0,0,0.65);
+}
+
+
+.textoRectagulo{
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 1%;
+}
+
+.inputTexto{
+    color: rgb(162, 147, 207);
+    background-color: transparent;
+    border-radius: 10px;
+    border-color: blueviolet;
+    margin-bottom: 4%;
+    margin-left: 2%;
+    width: 100%;
+}
+
+#profile{
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+#p1{
+    color: rgb(205, 158, 255);
+    font-weight: 900;
+    font-size: 46px;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 3%;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: rgb(205, 158, 255);
+}
+
+#inputFileBT{
+    margin-left: 5%;
+    height: 10%;
+    border-radius: 17px;
+    color: rgb(164, 123, 201);
+    border-color: rgb(85, 17, 148);
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Raleway', sans-serif;
+}
+
+#inputFileBT::file-selector-button{
+    width: 35%;
+    height: 10%;
+    border-radius: 14px;
+    background-color: rgb(164, 123, 201);
+    border-color: rgb(85, 17, 148);
+    color: rgb(85, 17, 148);
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'Raleway', sans-serif;
+}
+
+#inputFileBT::file-selector-button:hover{
+    background-color: rgb(112, 84, 137);
+    color: rgb(51, 11, 89);  
+}
+
+#inputFileBT::file-selector-button:active{
+    background-color: rgb(68, 19, 110);
+    color: rgb(173, 118, 224); 
+    border-color: rgb(173, 118, 224); 
+}
+
+/* From uiverse.io */
+button {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 5em;
+    height: 2em;
+    /* margin-left: 40%; */
+    margin-top: 17px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 25px;
+    border-radius: 13px;
+    font-weight: 500;
+    color: var(--color);
+   }
+   
+   button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+   }
+   
+   button:hover {
+    color: #fff;
+   }
+   
+   button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   button:hover:before {
+    top: -30px;
+    left: -30px;
+   }
+   
+   button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+   }

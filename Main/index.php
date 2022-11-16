@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<?php
+include 'conection.php';
+
+session_start();
+$usuario = $_SESSION['username'];
+
+if (!isset($usuario)) {
+
+  header('location: login.php');
+}
+?>
+
+<head>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- JQuery  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="./js/clock.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="StyleSheet" href="./css/index.css" type="text/css">
+  <link rel="StyleSheet" href="./css/card.css" type="text/css">
+  <link rel="StyleSheet" href="./css/clock.css" type="text/css">
+  <link href="http://fonts.cdnfonts.com/css/ds-digital" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+
+
+
+  <!-- Font Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+  <link rel="icon" href=".\img\icono.ico">
+  <title>Home</title>
+
+
+</head>
+
+<body>
+  <header class="bg-dark">
+   
+
+    <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
+      <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+          <ul class="navbar-nav">
+            <li>
+              <div class="text-muted small fw-bold text-uppercase px-3">
+                <h2 class="logo">
+                  <a style="text-decoration: none; margin:0;" href="index.php">
+                    <img src="./img/Pañol_3.png" height="115px">
+                  </a>
+                </h2>
+              </div>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link px-3">
+                <span class="me-2"><a class="header-btn active" href="index.php">Inicio</a></span>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link px-3">
+                <span class="me-2"><a class="header-btn" href="historial.php">Historial</a></span>
+
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-3">
+                <span class="me-2"> <a class="header-btn" href="register.php">Regis.Usuario</a></span>
+
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-3">
+                <span class="me-2"><a class="header-btn" href="profile.php">Perfil</a></span>
+
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-3">
+                <span class="me-2"><a class="logOut" href="close.php">LogOut</a></span>
+
+              </a>
+            </li>
+            <li>
+              <button id="clock" type="button" class="header-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              </button>
+            </li>
+            <li>
+
+              <div id="clock" class="dark">
+                <div class="display">
+
+                  <div class="digits"></div>
+                </div>
+              </div>
+
+            </li>
+            <li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+
+    <!-- JavaScript Includes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Proximas 5 devoluciones </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <?php
+
+            date_default_timezone_set('America/Argentina/Cordoba');
+
+            $currentTime = date('Y-m-d', time());
+
+            $query = mysqli_query($con, "SELECT * FROM turnos WHERE fecha_turno = '" . $currentTime . "' ORDER BY fecha_turno LIMIT 5");
+            while ($fila = mysqli_fetch_array($query)) {
+              print('<p>' . $fila['nombre_paciente'] . ' ' . $fila['surname'] . ' || Hora estimada: ' . $fila['time'] . '</p>');
+              echo "<hr>";
+            }
+
+
+            ?>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <br>
+  <br>
+
+  <div style="margin-left:10%;--bs-gutter-x:0;">
+    <div class="row justify-content-center --bs-gutter-x:0;">
+
+      <div class="col-5 row" style="align-items:center; overflow:auto">
+        <!--Peticiones -->
+        <h2 class="col-4 btn_title">Turnos</h2>
+        <!--Agregar nueva -->
+        <a class="col-3" href="form_new_request.php">
+          <button class="icon-btn add-btn" onclick="form_new_request.php">
+            <div class="add-icon"></div>
+            <div class="btn-txt">Nuevo turno</div>
+          </button>
+        </a>
+
+      </div>
+
+      <div class="col-7 row search-part" style="align-items:center;--bs-gutter-x:0;">
+
+        <!--SearchBar -->
+
+        <div class="col-7">
+          <div class="col-7">
+            <form class="d-flex input-group" id="searchbar" method="GET">
+              <!-- Se necesita centrar la X de eliminar -->
+              <?php
+              if (!empty($_GET['seachbar_input'])) {
+                echo '<a href="index.php" class="fas fa-times-circle" style = "position: relative; margin:5px;"></a>';
+              }
+              ?>
+
+              <input class="form-control" type="search" name="seachbar_input" placeholder="Buscar..." aria-label="Search">
+              <button class="btn btn-primary" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Ordenador de archivos -->
+
+        <div class=" col-4" id="select" style="float: right;">
+          <form action="" id="ordenador" method="post">
+            <select class="form-select" name="select_ordenador" onchange="selectOptionSort()" aria-label="Default select example">
+              <?php
+              if (!empty($_POST['select_ordenador'])) {
+                $seleccionador = $_POST['select_ordenador'];
+                echo '<option selected> Ordenado por:  ' . $seleccionador . ' </option>';
+              }
+
+              ?>
+              <optgroup label="Ordenar por Nombre">
+                <option value="nombre ASC">A-Z</option>
+                <option value="nombre DESC">Z-A</option>
+              </optgroup>
+
+              <optgroup label="Ordenar por devolucion">
+                <option value="fecha_estimada_devolucion ASC">Más proximos</option>
+                <option value="fecha_estimada_devolucion DESC">Más últimos</option>
+              </optgroup>
+
+
+
+              <optgroup label="Ordenar por creacion">
+                <option value="fecha_generacion DESC">Más recientes</option>
+                <option value="fecha_generacion ASC">Más antiguos</option>
+              </optgroup>
+
+            </select>
+          </form>
+        </div>
+
+
+
+      </div>
+    </div>
+    <br>
+
+
+    <!-- Items Body -->
+
+    <div class="items-container display-flex row justify-content-center">
+
+
+      <?php
+
+      // Definimos la variable ordenador
+      if (!empty($_POST['select_ordenador'])) {
+        $seleccionador = $_POST['select_ordenador'];
+      } else {
+        $seleccionador = "time";
+      }
+
+      // Definimos la searchbar
+      if (!empty($_GET['seachbar_input'])) {
+        $searchbar = trim($_GET['seachbar_input']);
+      } else {
+        $searchbar = "";
+      }
+
+
+
+
+
+      $sql = "SELECT * FROM turnos WHERE fecha_turno = '" . $currentTime . "' AND 
+      (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
+      ORDER BY " . $seleccionador . "";
+      $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
+
+      if (mysqli_num_rows($resultado) == 0) { ?>
+        <!-- Add card -->
+        <a class="card-add col-3" href="form_new_request.php">
+          <strong class="card_title"></strong>
+          <div class="card__body">
+            <span>+</span>
+          </div>
+        </a>
+      <?php
+      }
+
+
+      //Generacion de las peticiones (cards)
+      while ($fila = mysqli_fetch_array($resultado)) {
+
+        //Validacion para el vencimiento
+
+
+        // Se necesita sacar la diferencia de la currentTime - fecha_estimada_devolucion
+        $NuevaFecha = strtotime('+15 minute', strtotime($currentTime));
+        $New = date('H:i', $NuevaFecha);
+        $vencimiento = " ";
+
+        if (strtotime($currentTime) >= strtotime($fila['time'])) {
+
+          $vencimiento = "danger";
+          //Aca poner la clase Danger a la card
+        } else if (strtotime($New) >= strtotime($fila['time'])) {
+
+          $vencimiento = "warning";
+        }
+
+      ?>
+
+
+        <form class="card <?php //print($vencimiento); 
+                          ?> col-3" action="changeStatus.php" method="POST">
+
+
+          <strong class="card_title"><?php echo ' ' . $fila["name_paciente"] //estaba testeando como quedaba con la cantidad en el titulo
+                                      ?></strong>
+          <span class="info-container">
+            <?php
+
+            ?>
+            <input name="button" type="button" class="btn btn-danger" onclick="if(confirm('¿Estas seguro/a que ha sido solucionado este inconveniente?')){
+              this.form.submit();}
+          else{ alert('Operación cancelada');}" title="Marcar como solucionado" value="X" class="fas fa-times-circle" <?php print('id = " ' . $fila['id_turno'] . '" ') ?></input>
+
+            <input name="id_card" <?php echo ' value = "' . $fila['id_turno'] . '" ' ?> style="display: none">
+            <p id="text1">Diagnostico: <?php print($fila['diagnos']); ?></p>
+            <p id="text1">Medicamentos: <?php print($fila['medicamentos']); ?></p>
+
+            <p class="fecha"><?php print($fila['time_estimated']); ?></p>
+
+
+          </span>
+
+        </form>
+
+
+      <?php
+
+      }
+      ?>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- <footer>
+    <a href="javascript:void(0)" onclick="location.href='./secret.html'" class="easter_egg"><img src=".\img\logo_2.png" width="2.2%" alt="MoonDrive_logo"></a>
+    <a href="javascript:void(0)" style="text-decoration: none; color:white;">© MoonDrive Company </a>
+
+  </footer>
+ -->
+
+
+
+  <script>
+    function selectOptionSort() {
+
+      let option = document.getElementById('ordenador');
+      option.submit();
+
+
+    }
+
+    function SeachBar() {
+
+      let searchbar = document.getElementById('searchbar');
+
+
+      searchbar.submit();
+
+    }
+
+    $(document).ready(function() {
+      var active = false;
+      var down = false;
+
+      $("#bell").click(function(e) {
+
+        var color = $(this).text();
+        if (down) {
+
+          $("#box").css("height", "0px");
+          $("#box").css("opacity", "0");
+          down = false;
+        } else {
+
+          $("#box").css("height", "auto");
+          $("#box").css("opacity", "1");
+          down = true;
+
+        }
+
+      });
+      //funcion para que el boton agregar amigos pueda abrir y cerrar el PopUp al tocarlo
+      $("#friendsbtn").click(function(e) {
+
+        if (active == true) {
+
+          $(".addfriends_container").css("display", "none");
+          active = false;
+        } else {
+
+          $(".addfriends_container").css("display", "block");
+
+          active = true;
+
+        }
+
+      });
+      //funcion el boton X para cerrar el formulario
+      $(".close-btn").click(function(e) {
+
+        $(".addfriends_container").css("display", "none");
+        active = false;
+
+
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+/* input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    } */
+
+    *{
+        background-color: #401464;
+        color: #8e87cf;
+        font-size: 20px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 800;
+    }
+
+    #p{
+        font-size: 50px;
+        font-family: 'Signika', sans-serif;
+    }
+
+    #fondoForm{
+        background-color: hsla(246, 43%, 67%, 0.502);
+        height: 50vh;
+        width: 69vh;
+        margin-left: 30%;
+        padding: 5vh;
+        border-radius: 10px;
+    }
+
+    #volverAtras{
+        font-size: 22px;
+        background-color: #02112400;
+        color: white;
+        text-decoration: none;
+    }
+
+    #volverBoth{
+        background-color: #072a5700;
+        margin-bottom: 3%;
+    }
+    
+    #volverAtrasElemento{
+        color: white;
+        background-color: #02112400;
+    }
+    
+    #volverAtrasElemento:hover{
+        color:red;
+        cursor: pointer;
+    }
+
+    .inputElement{
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 21px;
+        border-width: 3.2px;
+        border-color: hsl(0, 0%, 100%);
+        border-radius: 10px;
+        height: 10%;
+        width: 83%;
+        margin-bottom: 1vh;
+       
+        margin-left: 6%;
+        text-align: center;
+    }
+
+    .inputElement::placeholder{
+        background-color: transparent;
+        color: #ffffff;
+        border-color: #401464;
+        
+    }
+
+#subirArchivo, label{
+    background-color: transparent;
+    color: #fff;
+    width: 39vh;    
+}
+
+ #subirArchivo{
+    font-size: 16px;
+}
+
+label{
+    font-size: 22px;
+}
+
+#subirArchivo[type=file]::file-selector-button {
+     background-color: #d0a6f5;
+     border-radius: 10px;
+     border-color: #27043f;
+     color: #27043f;
+     border-width: 3px;
+     width: 21vh;
+     font-size: 21px;
+}
+
+    #cargarElemento{
+        background-color: #b378e4;
+        color: #350e72;
+        font-size: 23px;
+        width: 30%;
+        height: 15%;
+        border-radius: 10px;
+        margin-left: 34.5%;
+        border-color: #2c0757;
+        transition: .3s;
+        cursor: pointer;
+        margin-bottom: 10px;
+        padding: 2px;
+        margin-top: 2.5vh;
+    }
+
+        
+    #cargarElemento:hover{
+        background-color: #a42cd4d5;
+        color: #ffffff;
+        border-color: #2c0757;
+        cursor: pointer;
+    }
+
+    #cargarElemento:active{
+        color: #a42cd4d5;
+        background-color: #2c0757;
+        border-color: #421b6e;
+    }
+
+    .errorMessage{
+        background-color: transparent;
+        color: rgb(226, 168, 168);
+        font-size: 15px;
+    }

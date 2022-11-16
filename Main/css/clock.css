@@ -1,0 +1,38 @@
+#clock{
+    position: absolute;
+    top: 10%;
+    right: 60%;
+    background-color:#333;
+    font-family: 'DS-Digital', sans-serif;  
+    font-size:20px;
+    text-shadow:0px 0px 1px #fff;
+    border-radius: 15px;
+    color:#fff;
+    box-shadow: -5px 4px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -5px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 4px 5px 0px rgba(0,0,0,0.75);
+}
+#clock:hover{
+
+    color:rgb(34, 34, 34);
+    background-color: rgb(243, 243, 243);
+    border: 2px solid black;
+
+}
+
+
+.modal-body{
+    font-family: 'Roboto Medium', sans-serif;
+    font-size: 18px;
+    margin: 6px;
+    color: black;
+
+
+                                                
+}
+.modal-title{
+    font-family: 'Roboto Black', sans-serif;
+    font-size: 30px;
+    margin: 2px;
+    color: rgb(92, 50, 50);
+}
