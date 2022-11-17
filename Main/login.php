@@ -19,24 +19,34 @@ if (!empty($_POST['txtusuario']) && !empty($_POST['txtpassword'])) {
 	$pass = $_POST['txtpassword'];
     $query = mysqli_query($con,"SELECT * FROM register WHERE DNI = '".$dni."' and password = '".$pass."'");
     $nr = mysqli_num_rows($query);
-    while($nr2 = $query->fetch_assoc()) {
-        $nombre = $nr2["name2"];
+    while($fila = $query->fetch_assoc()) {
+        $nombre = $fila["name2"];
         
       }
-
     
 
     if($nr == 1)
 	{	
 	$_SESSION['username'] = $nombre;
+    $_SESSION['show'] = "Medico"; 
 	echo "Nice";
 	header("Location: index.php");
 	
 	}
 	else if ($nr == 0) 
 	{
-	
-		
+        $query2 = mysqli_query($con,"SELECT * FROM admins WHERE user = '".$dni."' and pass = '".$pass."'");
+        $nra = mysqli_num_rows($query2);
+        if($nra >= 1)
+        {
+            $_SESSION['username'] = $dni;
+            $_SESSION['admin'] = 'admin';
+            $_SESSION['show'] = "Administrador";
+            echo "Nice";
+	        header("Location: index.php");
+            
+        }
+        else
 		$message = 'Sorry, those credentials do not match';
 	}
 	
@@ -87,7 +97,7 @@ if (!empty($_POST['txtusuario']) && !empty($_POST['txtpassword'])) {
             <form method="post" action="login.php">
                 <table>
                     <label>DNI</label></td></tr>
-                    <input type="number" name="txtusuario"/></td></tr>
+                    <input type="text" name="txtusuario"/></td></tr>
                     <label>Contraseña</label></td></tr>
                     <input type="password" name="txtpassword" /> </td></tr>
                     <input type="submit" value="Ingresar" /> </td></tr>

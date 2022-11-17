@@ -42,7 +42,7 @@ if (!empty($_POST['uploadBtn'])) {
     else
     {
         $_SESSION['message'] = "Paciente no encontrado";
-        header("Location: form_turno.php");
+        header("Location: form_turno.php");  
     }
     
 

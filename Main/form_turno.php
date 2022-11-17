@@ -99,12 +99,12 @@ error_reporting(-1);
 
                 <select class="inputElement" style="margin-bottom: 3%;" name="zona" required>
                 <?php
-                $sql = "SELECT * FROM zonas";
+                $sql = "SELECT * FROM especialidades";
                 $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
                 while ($fila = mysqli_fetch_array($resultado)) {
 
-                    echo  '<option value="' . $fila['nombre'] . '"> '.$fila['nombre'] .'</option>';
+                    echo  '<option value="' . $fila['codigo'] . '"> '.$fila['descripcion'] .'</option>';
                 }
 
                 

@@ -5,7 +5,7 @@ button {
 }
 :root {
   --offcanvas-width: 200px;
-  --topNavbarHeight: 56px;
+  --topNavbarHeight: 0px;
 }
 .sidebar-nav {
   width: 12%;
@@ -70,5 +70,9 @@ button {
 }
 .navbar-nav li{
   overflow-y: hidden;
+}
+
+.sidebar-nav{
+  padding-top: 50px;
 }
 

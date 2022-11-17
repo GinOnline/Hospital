@@ -10,6 +10,17 @@ if (!isset($usuario)) {
 
   header('location: login.php');
 }
+if(isset($_SESSION['admin']))
+{
+  $HideForAdmin = 'style = "display:none;"';
+  $HideForUser = " ";
+
+}
+else{
+  $HideForAdmin  = " ";
+  $HideForUser  = $HideForAdmin = 'style = "display:none;"';
+}
+
 ?>
 
 <head>
@@ -47,7 +58,7 @@ if (!isset($usuario)) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
-  <link rel="icon" href=".\img\icono.ico">
+  <link rel="icon" href=".\img\logo.ico">
   <title>Home</title>
 
 
@@ -55,12 +66,16 @@ if (!isset($usuario)) {
 
 <body>
   <header class="bg-dark">
-    <nav class="up_nav">
-      <ul>
+    <nav class="up_nav"><span style="margin-left:205px; color:white; font-size:35px"><?php echo  $_SESSION['show']?></span>
+      <!-- Clock -->
+
+      <!-- <ul>
         <li>
         <span class="me-2"><button id="clock" type="button" class="header-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
         </li>
-      </ul>
+      </ul> -->
+
+      
     </nav>
 
     <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
@@ -71,43 +86,54 @@ if (!isset($usuario)) {
               <div class="text-muted small fw-bold text-uppercase px-3">
                 <h2 class="logo">
                   <a style="text-decoration: none; margin:0;" href="index.php">
-                    <img src="./img/hospital_logo.png" height="115px">
+                    <img src="./img/logo.png" height="125px">
                   </a>
                 </h2>
               </div>
             </li>
+            <!-- Inicio -->
+     
+            <hr color="gray" style="margin-top: 50px" width="95%" >
+            <a class="side-links nav-link active px-3"href="index.php">
+              <span class="me-2 side-links-text"><i class="fas fa-home"></i>Inicio</span>
+            </a>
+            <hr color="gray" width="95%" >
 
-            <li>
-              <a href="#" class="nav-link px-3">
-                <span class="me-2"><a class="header-btn active" href="index.php"><i class="fas fa-home"></i>Inicio</a></span>
+            
+            <!-- Historial -->
+            
+            <hr color="gray" width="95%" >
+            <a class="side-links nav-link px-3" href="historial.php">
+                <span class="me-2 side-links-text"><i class="fas fa-history"></i>Historial</span>
+            </a>
+            <hr color="gray" width="95%" >
 
-              </a>
-            </li>
 
-            <li>
-              <a href="#" class="nav-link px-3">
-                <span class="me-2"><a class="header-btn" href="historial.php"><i class="fas fa-history"></i>Historial</a></span>
+            <!-- Register -->
+            <div <?php echo $HideForUser; ?>>
+            <hr color="gray" width="95%" >
+            <a class="side-links nav-link px-3" href="register.php">
+            <span class="me-2 side-links-text"> <i class="fas fa-user-plus"></i>Regis. Usuario</span>
+            </a>
+            <hr color="gray" width="95%" ></div>
+                
 
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link px-3">
-                <span class="me-2"> <a class="header-btn" href="register.php"><i class="fas fa-user-plus"></i>Regis.Usuario</a></span>
+            
+            <!-- Perfil -->
+            <hr color="gray" width="95%" >
+            <a class="side-links nav-link px-3" href="profile.php">
+              <span class="me-2 side-links-text"><i class="fas fa-user-circle"></i>Perfil</span>
+            </a>
+            <hr color="gray" width="95%" >
+            
+          
+            <!-- LogOut -->
+            <hr color="gray" width="95%" >
+            <a class="side-links nav-link px-3" href="close.php">
+              <span class="me-2 side-links-text"><i class="fas fa-sign-out-alt"></i> LogOut</span>
+            </a>
+            <hr color="gray" width="95%" >
 
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link px-3">
-                <span class="me-2"><a class="header-btn" href="profile.php"><i class="fas fa-user-circle"></i>Perfil</a></span>
-
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link px-3">
-                <span class="me-2"><a class="logOut" href="close.php"><i class="fas fa-sign-out-alt"></i> LogOut</a></span>
-
-              </a>
-            </li>
            
             </li>
             <li>
@@ -163,12 +189,13 @@ if (!isset($usuario)) {
 
       <div class="col-5 row" style="align-items:center; overflow:auto">
         <!--Peticiones -->
-        <h2 class="col-4 btn_title">Turnos</h2>
+        <h2 class="col-5 btn_title">Llamados</h2>
+
         <!--Agregar nueva -->
-        <a class="col-3" href="form_new_request.php">
-          <button class="icon-btn add-btn" onclick="form_new_request.php">
+        <a class="col-2" href="form_turno.php" <?php echo $HideForUser; ?>>
+          <button class="icon-btn add-btn">
             <div class="add-icon"></div>
-            <div class="btn-txt">Nuevo turno</div>
+            <div class="btn-txt">Nuevo llamado</div>
           </button>
         </a>
 
@@ -209,20 +236,20 @@ if (!isset($usuario)) {
 
               ?>
               <optgroup label="Ordenar por Nombre">
-                <option value="nombre ASC">A-Z</option>
-                <option value="nombre DESC">Z-A</option>
+                <option value="name_paciente ASC">A-Z</option>
+                <option value="name_paciente DESC">Z-A</option>
               </optgroup>
 
-              <optgroup label="Ordenar por devolucion">
-                <option value="fecha_estimada_devolucion ASC">Más proximos</option>
-                <option value="fecha_estimada_devolucion DESC">Más últimos</option>
+              <optgroup label="Ordenar por DNI">
+                <option value="dni ASC">Mayor</option>
+                <option value="dni DESC">Menor</option>
               </optgroup>
 
 
 
               <optgroup label="Ordenar por creacion">
-                <option value="fecha_generacion DESC">Más recientes</option>
-                <option value="fecha_generacion ASC">Más antiguos</option>
+                <option value="fecha_turno DESC">Más recientes</option>
+                <option value="fecha_turno ASC">Más antiguos</option>
               </optgroup>
 
             </select>
@@ -249,7 +276,7 @@ if (!isset($usuario)) {
       if (!empty($_POST['select_ordenador'])) {
         $seleccionador = $_POST['select_ordenador'];
       } else {
-        $seleccionador = "time";
+        $seleccionador = "fecha_turno";
       }
 
       // Definimos la searchbar
@@ -262,15 +289,24 @@ if (!isset($usuario)) {
 
 
 
+      if(isset($_SESSION['admin']))
+      {
+        $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND
+        (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
+        ORDER BY " . $seleccionador . "";
 
-      $sql = "SELECT * FROM turnos WHERE fecha_turno = '" . $currentTime . "' AND 
-      (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
-      ORDER BY " . $seleccionador . "";
+      }
+      else{
+        $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND zona = (SELECT especialidad FROM register WHERE name2 = '".$_SESSION['username']."') AND
+        (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
+        ORDER BY " . $seleccionador . "";
+      }
+   
       $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
       if (mysqli_num_rows($resultado) == 0) { ?>
         <!-- Add card -->
-        <a class="card-add col-3" href="form_new_request.php">
+        <a class="card-add col-3" href="form_turno.php">
           <strong class="card_title"></strong>
           <div class="card__body">
             <span>+</span>
@@ -307,13 +343,13 @@ if (!isset($usuario)) {
                           ?> col-3" action="changeStatus.php" method="POST">
 
 
-          <strong class="card_title"><?php echo ' ' . $fila["name_paciente"] //estaba testeando como quedaba con la cantidad en el titulo
+          <strong class="card_title"><?php echo ' ' . $fila["name_paciente"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
                                       ?></strong>
           <span class="info-container">
             <?php
 
             ?>
-            <input name="button" type="button" class="btn btn-danger" onclick="if(confirm('¿Estas seguro/a que ha sido solucionado este inconveniente?')){
+            <input name="button" type="button" class="btn btn-danger" onclick="if(confirm('¿Estas seguro/a que ha sido atendido el llamado?')){
               this.form.submit();}
           else{ alert('Operación cancelada');}" title="Marcar como solucionado" value="X" class="fas fa-times-circle" <?php print('id = " ' . $fila['id_turno'] . '" ') ?></input>
 

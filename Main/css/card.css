@@ -105,11 +105,15 @@ a {
   background: rgb(46, 44, 44);
   transition: all 300ms;
   margin: 20px;
+  transition: 0.2s;
+  text-transform: capitalize;
  }
  
  .card:hover {
+  background-color: whitesmoke;
+  color: rgb(3, 10, 9);
   opacity: 0.95;
-  transform: scale(1);
+  transform: scale(1.0);
  }
 
  .card-add {
