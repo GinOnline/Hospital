@@ -1,100 +1,159 @@
-body{
-    background-color: rgb(13,0,36);
-    padding-left: 5%;
+body {
     padding-right: 5%;
+    background-color: #75a2a5;
+    padding-left: 5%;
     padding-top: 2%;
-    
 }
 
 
-#rectanguloContenedor{
-    background-color: rgba(59, 11, 104, 0.489);
-    margin-left: 30%;
+#rectanguloContenedor {
+    background-color: #2b5153d5;
+    margin-left: auto;
+    margin-right: auto;
     width: 45%;
-    height: 420px;
-    padding-left: 2%;padding-left: 2%;
+    height: 430px;
+    padding-left: 2%;
+    padding-bottom: 2%;
     padding-right: 4%;
     overflow: auto;
     border-radius: 15px;
-    box-shadow: 19px 20px 28px -1px rgba(0,0,0,0.65);
-    -webkit-box-shadow: 19px 20px 28px -1px rgba(0,0,0,0.65);
-    -moz-box-shadow: 19px 20px 28px -1px rgba(0,0,0,0.65);
+    box-shadow: 19px 20px 28px -1px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: 19px 20px 28px -1px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 19px 20px 28px -1px rgba(0, 0, 0, 0.65);
+    font-family: 'Raleway', sans-serif;
 }
 
 
-.textoRectagulo{
+.textoRectagulo {
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 900;
     margin-bottom: 1%;
 }
 
-.inputTexto{
-    color: rgb(162, 147, 207);
+.inputTexto {
+    color: rgb(204, 233, 236);
     background-color: transparent;
     border-radius: 10px;
-    border-color: blueviolet;
+    border-color: rgb(143, 201, 202);
+    border-width: 3px;
     margin-bottom: 4%;
     margin-left: 2%;
     width: 100%;
+    height: 2.3rem;
+    font-size: 19px;
+    padding: 2%;
 }
 
-#profile{
+#profile {
     margin-left: 40%;
     margin-top: 5%;
 }
 
-#p1{
-    color: rgb(205, 158, 255);
+#p1 {
+    color: rgb(227, 249, 250);
     font-weight: 900;
     font-size: 46px;
     font-family: 'Raleway', sans-serif;
     margin-bottom: 3%;
     -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: rgb(205, 158, 255);
+    -webkit-text-stroke-color: rgb(112, 172, 175);
 }
 
-#inputFileBT{
-    margin-left: 5%;
+#inputFileBT {
+    margin-left: 100px;
     height: 10%;
     border-radius: 17px;
-    color: rgb(164, 123, 201);
-    border-color: rgb(85, 17, 148);
-    font-size: 14px;
+    color: rgb(174, 217, 228);
+    font-size: 16px;
     font-weight: 900;
     font-family: 'Raleway', sans-serif;
+    gap: 5px;
 }
 
-#inputFileBT::file-selector-button{
+#inputFileBT::file-selector-button {
+    margin-left: auto;
+    margin-right: 10px;
     width: 35%;
     height: 10%;
     border-radius: 14px;
-    background-color: rgb(164, 123, 201);
-    border-color: rgb(85, 17, 148);
-    color: rgb(85, 17, 148);
+    background-color: rgb(70, 126, 126);
+    color: rgb(212, 234, 240);
+    border-color: rgb(202, 224, 233);
     font-size: 18px;
     font-weight: 900;
     font-family: 'Raleway', sans-serif;
 }
 
-#inputFileBT::file-selector-button:hover{
-    background-color: rgb(112, 84, 137);
-    color: rgb(51, 11, 89);  
+#inputFileBT::file-selector-button:hover {
+    color: rgb(55, 124, 124);
+    background-color: rgb(212, 234, 240);
 }
 
-#inputFileBT::file-selector-button:active{
-    background-color: rgb(68, 19, 110);
-    color: rgb(173, 118, 224); 
-    border-color: rgb(173, 118, 224); 
+#inputFileBT::file-selector-button:active {
+    background-color: rgb(45, 80, 80);
+    color: rgb(141, 180, 190);
+    border-color: rgb(116, 161, 172);
 }
 
 /* From uiverse.io */
-button {
-    --color: #560bad;
+.editProfilePicture button {
+    --color: #1e4444;
+    font-family: inherit;
+    display: inline-block;
+    width: 10rem;
+    height: 1.9em;
+    /* margin-left: 40%; */
+    margin-top: 17px;
+    margin-bottom: 17px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .2s;
+    z-index: 1;
+    font-size: 18px;
+    border-radius: 13px;
+    font-weight: 500;
+    color: var(--color);
+}
+
+.editProfilePicture button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.editProfilePicture button:hover {
+    color: #fff;
+}
+
+.editProfilePicture button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+
+.editProfilePicture button:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+.editProfilePicture button:active:before {
+    background: #072f36;
+    transition: background 0s;
+}
+
+
+.saveProfileData button {
+    --color: #208a8a;
     font-family: inherit;
     display: inline-block;
     width: 5em;
-    height: 2em;
+    height: 1.9em;
     /* margin-left: 40%; */
     margin-top: 17px;
     margin-bottom: 20px;
@@ -107,9 +166,11 @@ button {
     border-radius: 13px;
     font-weight: 500;
     color: var(--color);
-   }
-   
-   button:before {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.saveProfileData button:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -117,24 +178,66 @@ button {
     height: 150px;
     width: 200px;
     border-radius: 50%;
-   }
-   
-   button:hover {
+}
+
+.saveProfileData button:hover {
     color: #fff;
-   }
-   
-   button:before {
+}
+
+.saveProfileData button:before {
     top: 100%;
     left: 100%;
     transition: all .7s;
-   }
-   
-   button:hover:before {
+}
+
+.saveProfileData button:hover:before {
     top: -30px;
     left: -30px;
-   }
-   
-   button:active:before {
-    background: #3a0ca3;
+}
+
+.saveProfileData button:active:before {
+    background: #186464;
     transition: background 0s;
-   }
+}
+
+
+#volverAtras {
+    font-size: 22px;
+    background-color: #02112400;
+    color: white;
+    text-decoration: none;
+}
+
+#volverBoth {
+    background-color: #072a5700;
+    margin-bottom: 4%;
+    margin-top: 4%;
+}
+
+#volverAtrasElemento {
+    color: white;
+    background-color: #02112400;
+}
+
+#volverAtrasElemento:hover {
+    color: red;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #1d4141;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f7f7f7;
+    border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c7c7c7;
+    border-radius: 5rem;
+}

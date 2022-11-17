@@ -59,7 +59,7 @@ else{
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
   <link rel="icon" href=".\img\logo.ico">
-  <title>Home</title>
+  <title>Inicio</title>
 
 
 </head>
@@ -78,69 +78,80 @@ else{
       
     </nav>
 
-    <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
-      <div class="offcanvas-body p-0">
-        <nav class="navbar-dark">
-          <ul class="navbar-nav">
-            <li>
-              <div class="text-muted small fw-bold text-uppercase px-3">
-                <h2 class="logo">
-                  <a style="text-decoration: none; margin:0;" href="index.php">
-                    <img src="./img/logo.png" height="125px">
-                  </a>
-                </h2>
-              </div>
-            </li>
-            <!-- Inicio -->
-    
-            <hr color="gray" width="95%" style="margin-top: 80px;">
-            <a class="side-links nav-link active px-3"href="index.php">
-              <span style="text-align:center" class="me-2 side-links-text"><i style="text-align:center" class="fas fa-home"></i>Inicio</span>
-            </a>
-            <hr color="gray" width="95%" >
+    <center>
+        <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
+            <div class="offcanvas-body p-0">
+                <nav class="navbar-dark">
+                    <div class="navbar-nav">
+                        <li>
+                            <div class="text-muted small fw-bold text-uppercase px-3">
+                                <h2 class="logo">
+                                    <a style="text-decoration: none; margin:0;" href="index.php">
+                                        <center><img src="./img/logo.png" height="90px"></center>
+                                    </a>
+                                </h2>
+                            </div>
+                        </li>
 
-            
-            <!-- Historial -->
-            
-            <hr color="gray" width="95%" style="margin-top: 10px;">
-            <a class="side-links nav-link px-3" href="historial.php">
-                <span style="text-align:center" class="me-2 side-links-text"><i style="text-align:center" class="fas fa-history"></i>Historial</span>
-            </a>
-            <hr color="gray" width="95%" >
+                        <!-- Inicio -->
 
+                        <div class="sb1">
+                            <a class="side-links nav-link active px-3" style="margin-top: 20px;" href="index.php">
+                                <span class="me-2 side-links-text"><i class="fas fa-home"></i>Inicio</span>
+                            </a>
+                        </div>
 
-            <!-- Register -->
-            <div <?php echo $HideForUser; ?>>
-            <hr color="gray" width="95%" style="margin-top: 10px;">
-            <a class="side-links nav-link px-3" href="register.php">
-            <span style="text-align:center" class="me-2 side-links-text"> <i style="text-align:center" class="fas fa-user-plus"></i>Regis. Usuario</span>
-            </a>
-            <hr color="gray" width="95%" ></div>
-                
+                        <!-- Historial -->
 
-            
-            <!-- Perfil -->
-            <hr color="gray" width="95%" style="margin-top: 10px;">
-            <a class="side-links nav-link px-3" href="profile.php">
-              <span style="text-align:center"class="me-2 side-links-text"><i style="text-align:center" class="fas fa-user-circle"></i>Perfil</span>
-            </a>
-            <hr color="gray" width="95%" >
-            
-          
-            <!-- LogOut -->
-            <hr color="gray" width="95%" style="margin-top: 10px;">
-            <a class="side-links nav-link px-3" href="close.php">
-              <span  style="text-align:center"class="me-2 side-links-text"><i style="text-align:center" class="fas fa-sign-out-alt"></i> LogOut</span>
-            </a>
-            <hr color="gray" width="95%" >
+                        <div class="sb2">
+                            <center>
+                                <hr color="gray">
+                            </center>
+                            <a class="side-links nav-link px-3" href="historial.php">
+                                <span class="me-2 side-links-text"><i class="fas fa-history"></i>Historial</span>
+                            </a>
+                        </div>
 
-           
-            </li>
-            <li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+                        <!-- Register -->
+
+                        <div class="sb3">
+                            <div <?php echo $HideForUser; ?>></div>
+                            <center>
+                                <hr color="gray">
+                            </center>
+                            <a class="side-links nav-link px-3" href="register.php">
+                                <span class="me-2 side-links-text"> <i class="fas fa-user-plus"></i>Registro</span>
+                            </a>
+                        </div>
+
+                        <!-- Perfil -->
+
+                        <div class="sb4">
+                            <center>
+                                <hr color="gray" >
+                            </center>
+                            <a class="side-links nav-link px-3" href="profile.php">
+                                <span class="me-2 side-links-text"><i class="fas fa-user-circle"></i>Perfil</span>
+                            </a>
+                        </div>
+
+                        <!-- LogOut -->
+
+                        <div class="sb5">
+                            <center>
+                                <hr color="gray">
+                            </center>
+                            <a class="side-links nav-link px-3" href="close.php">
+                                <span class="me-2 side-links-text"><i class="fas fa-sign-out-alt"></i> LogOut</span>
+                            </a>
+                        </div>
+
+                        </li>
+                        <li>
+                    </div>
+                </nav>
+            </div>
+        </div></center>
 
 
 
@@ -184,7 +195,7 @@ else{
   <br>
   <br>
 
-  <div style="margin-left:10%;">
+  <div style="margin-left:10%;--bs-gutter-x:0;">
     <div class="row justify-content-center --bs-gutter-x:0;">
 
       <div class="col-5 row" style="align-items:center; overflow:auto">
@@ -305,12 +316,11 @@ else{
       $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
       if (mysqli_num_rows($resultado) == 0) { ?>
-
         <!-- Add card -->
         <a class="card-add col-3" href="form_turno.php">
           <strong class="card_title"></strong>
           <div class="card__body">
-            <i class="fas fa-plus"></i>
+            <span>+</span>
           </div>
         </a>
       <?php

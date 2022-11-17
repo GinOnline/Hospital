@@ -51,9 +51,15 @@ a {
 }
 .fitrar_text{
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 18px;
+    color: white;
 
 }
+
+p{
+    color: white;
+}
+
 .header-tools .tools ul li{
     display: inline-block;
     margin: 0 var(--dt-padding-xsm);

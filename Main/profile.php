@@ -120,24 +120,40 @@ echo '<!DOCTYPE html>
     <!-- Icono -->
     <link rel="icon" href="img/logo.ico" type="image/icon" sizes="16x16">
 
+    <script>
+        function cambioColor() {
+            var flecha = document.getElementById("volverAtrasElemento");
+
+            flecha.style.color = "red";
+        }
+
+        function vueltaColor() {
+            var flecha = document.getElementById("volverAtrasElemento");
+
+            flecha.style.color = "white";
+        }
+    </script>
+
     <title>Admin</title>
 </head>
 <body>
 
-    <p id="p1"> Información del Perfil</p>
-    <p><a href="index.php">Volver al Inicio</a></p>
+    <br><center><p id="p1"> Información del Perfil</p></center>
+
     <div id="rectanguloContenedor" class="container">
         
-        
-    
+        <div id="volverBoth">
+            <i class="fas fa-chevron-left" id="volverAtrasElemento"></i>
+            <a id="volverAtras" onmouseover="cambioColor()" onmouseout="vueltaColor()" href="index.php"> Volver</a>
+        </div>
 
         <form action="update-profile.php" method="POST" enctype="multipart/form-data">
            
-           
+            <div class="editProfilePicture">
             <img src="'.$data_profile[3].'" width="20%" id="profile" height="20%"><br><br>
-            <label style="color: white;">Sube una imagen:</label>
-            <input id="subirArchivo" type="file" name="uploadedFile" />
-            <center><button name="upload_file_btn">Editar Imagen</button></center>
+            <center><label style="color: white; font-size: 18px; margin-bottom: 1.5%;">Sube una imagen:</label>
+            <input id="inputFileBT" type="file" name="uploadedFile" />
+            <button name="upload_file_btn">Guardar Imágen</button></center></div>
             
             <label class="textoRectagulo">Estado</label><br>
             <input class="inputTexto" type="text" placeholder="'.$data_profile[0].'" name="status" value="'.$data_profile[0].'"><br>
@@ -150,7 +166,7 @@ echo '<!DOCTYPE html>
             <label class="textoRectagulo">Teléfono</label><br>
             <input class="inputTexto" type="numeric" placeholder="'.$data_profile[2].'" name="phone" value="'.$data_profile[2].'""><br>
         
-            <center><button name="done">Guardar</button></center>
+            <div class="saveProfileData"><center><button name="done">Guardar</button></center></div>
         </form>
     </div>
 </body>

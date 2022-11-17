@@ -130,14 +130,14 @@ header ul li a.active {
   color: #fff;
   font-weight: 900;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .d-flex button {
   height: 40px;
-  background-color: #0a105f;
+  background-color: #0a5252;
   color: #fff;
   border-color: #fff;
   font-size: 18px;
@@ -146,16 +146,23 @@ header ul li a.active {
 }
 
 .d-flex button:hover {
-  background-color: #c5c9ff;
-  color: #0a105f;
-  border-color: #0a105f;
+  background-color: #c5f1ff;
+  color: #0a595f;
+  border-color: #0a5c5f;
   font-weight: 600;
 }
 
 .d-flex button:active {
-  background-color: #767eeb;
+  background-color: #93cac7;
   color: #fff;
-  border-color: #070c52;
+  border-color: #075248;
+  font-weight: 600;
+}
+
+.d-flex button:focus {
+  background-color: #93cac7;
+  color: #fff;
+  border-color: #075248;
   font-weight: 600;
 }
 
@@ -317,12 +324,4 @@ footer{
   margin-right: 8px;
   padding-top: 2px;
 
-}
-hr{
-  margin: 0;
-}
-.fa-plus{
-  color:#292e2f;
-  margin-left: 44%;
-  margin-bottom: 5%;
 }
