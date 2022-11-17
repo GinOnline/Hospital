@@ -92,45 +92,45 @@ else{
               </div>
             </li>
             <!-- Inicio -->
-     
-            <hr color="gray" style="margin-top: 50px" width="95%" >
+    
+            <hr color="gray" width="95%" style="margin-top: 80px;">
             <a class="side-links nav-link active px-3"href="index.php">
-              <span class="me-2 side-links-text"><i class="fas fa-home"></i>Inicio</span>
+              <span style="text-align:center" class="me-2 side-links-text"><i style="text-align:center" class="fas fa-home"></i>Inicio</span>
             </a>
             <hr color="gray" width="95%" >
 
             
             <!-- Historial -->
             
-            <hr color="gray" width="95%" >
+            <hr color="gray" width="95%" style="margin-top: 10px;">
             <a class="side-links nav-link px-3" href="historial.php">
-                <span class="me-2 side-links-text"><i class="fas fa-history"></i>Historial</span>
+                <span style="text-align:center" class="me-2 side-links-text"><i style="text-align:center" class="fas fa-history"></i>Historial</span>
             </a>
             <hr color="gray" width="95%" >
 
 
             <!-- Register -->
             <div <?php echo $HideForUser; ?>>
-            <hr color="gray" width="95%" >
+            <hr color="gray" width="95%" style="margin-top: 10px;">
             <a class="side-links nav-link px-3" href="register.php">
-            <span class="me-2 side-links-text"> <i class="fas fa-user-plus"></i>Regis. Usuario</span>
+            <span style="text-align:center" class="me-2 side-links-text"> <i style="text-align:center" class="fas fa-user-plus"></i>Regis. Usuario</span>
             </a>
             <hr color="gray" width="95%" ></div>
                 
 
             
             <!-- Perfil -->
-            <hr color="gray" width="95%" >
+            <hr color="gray" width="95%" style="margin-top: 10px;">
             <a class="side-links nav-link px-3" href="profile.php">
-              <span class="me-2 side-links-text"><i class="fas fa-user-circle"></i>Perfil</span>
+              <span style="text-align:center"class="me-2 side-links-text"><i style="text-align:center" class="fas fa-user-circle"></i>Perfil</span>
             </a>
             <hr color="gray" width="95%" >
             
           
             <!-- LogOut -->
-            <hr color="gray" width="95%" >
+            <hr color="gray" width="95%" style="margin-top: 10px;">
             <a class="side-links nav-link px-3" href="close.php">
-              <span class="me-2 side-links-text"><i class="fas fa-sign-out-alt"></i> LogOut</span>
+              <span  style="text-align:center"class="me-2 side-links-text"><i style="text-align:center" class="fas fa-sign-out-alt"></i> LogOut</span>
             </a>
             <hr color="gray" width="95%" >
 
@@ -184,7 +184,7 @@ else{
   <br>
   <br>
 
-  <div style="margin-left:10%;--bs-gutter-x:0;">
+  <div style="margin-left:10%;">
     <div class="row justify-content-center --bs-gutter-x:0;">
 
       <div class="col-5 row" style="align-items:center; overflow:auto">
@@ -305,11 +305,12 @@ else{
       $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
       if (mysqli_num_rows($resultado) == 0) { ?>
+
         <!-- Add card -->
         <a class="card-add col-3" href="form_turno.php">
           <strong class="card_title"></strong>
           <div class="card__body">
-            <span>+</span>
+            <i class="fas fa-plus"></i>
           </div>
         </a>
       <?php

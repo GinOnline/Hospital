@@ -3,7 +3,7 @@
      //conectamos Con el servidor
     $host ="localhost";
     $user ="root";
-    $pass ="";
+    $pass ="Goldman-2019";
     $db="hospital_blue";
 
     

@@ -7,7 +7,7 @@ error_reporting(-1);
 
 if (!empty($_POST['uploadBtn'])) {
 
-    echo "Nice";
+    echo "Nice ";
     $dni = $_POST['dni'];
 
     $diag = $_POST['diag'];

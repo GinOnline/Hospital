@@ -117,20 +117,28 @@ a {
  }
 
  .card-add {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   font-weight: bold;
   font-size: 60px;
   color: snow;
   border-radius: 15%;
-
+  border-color:#212529 ;
+  border-style: solid;
+  border-width: 6px;
   width: 190px;
   height: 254px;
-  background: rgb(72, 98, 73);
+  background: rgb(255, 255, 255);
+  transition: .5s;
  }
- 
+ .card-add:hover {
+  font-weight: bold;
+  font-size: 60px;
+  color: #cdcdcd;
+  border-radius: 15%;
+  border-color:#212529 ;
+  border-style: solid;
+  border-width: 6px;
+  background-color: #212529;
+ }
  .card_title{
   text-align: center;
   margin: 15px;

@@ -318,3 +318,11 @@ footer{
   padding-top: 2px;
 
 }
+hr{
+  margin: 0;
+}
+.fa-plus{
+  color:#292e2f;
+  margin-left: 44%;
+  margin-bottom: 5%;
+}
