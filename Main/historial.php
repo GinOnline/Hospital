@@ -188,11 +188,9 @@ if (isset($_SESSION['admin'])) {
             </div>
         </div>
     </header>
-    <br>
-    <br>
-    <br>
-
-    <div style="margin-left:10%;--bs-gutter-x:0;">
+    
+    
+    <div style="margin-left:11.4%;--bs-gutter-x:0;">
 
         <br>
         <div class="items-container display-flex row justify-content-center">
