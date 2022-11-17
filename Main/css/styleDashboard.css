@@ -1,3 +1,8 @@
+.allStatics{
+  margin-left: 12.5%;
+  margin-top: 2%;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 body,
 button {
@@ -5,11 +10,10 @@ button {
 }
 :root {
   --offcanvas-width: 200px;
-  --topNavbarHeight: 0px;
+  --topNavbarHeight: 56px;
 }
 .sidebar-nav {
-  width: 12%;
-  background-color: #b8e9d0;
+  width: 10%;
 }
 .sidebar-link {
   display: flex;
@@ -68,21 +72,4 @@ button {
   text-align: center;
   margin-top: 5%;
 }
-.navbar-nav li{
-  overflow-y: hidden;
-}
 
-.sidebar-nav{
-  padding-top: 50px;
-}
-
-.side-links-text{
-  font-size: 16px;
-}
-
-.offcanvas hr{
-  width: 80%;
-  border: 1px solid rgb(105, 105, 105);
-  align-items: center;
-  align-content: center;
-}

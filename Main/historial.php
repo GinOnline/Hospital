@@ -108,6 +108,17 @@ if (isset($_SESSION['admin'])) {
                                 <span class="me-2 side-links-text"><i class="fas fa-history"></i>Historial</span>
                             </a>
                         </div>
+                        
+                        <!-- Dashboard -->
+
+                        <div class="sb6">
+                            <center>
+                                <hr color="gray">
+                            </center>
+                            <a class="side-links nav-link px-3" href="dashboard.php">
+                                <span class="me-2 side-links-text"><i class="fas fa-chart-line"></i></i>Dashboard</span>
+                            </a>
+                        </div>
 
                         <!-- Register -->
 
