@@ -163,7 +163,7 @@ header ul li a.active {
   margin-left: 9vh;
   /*margin-left:68px;*/
   margin-right: 8%;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -283,4 +283,38 @@ footer{
 }
 .clock{
   float: right;
+}
+
+/* SideBar links */
+
+.side-links{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px;
+  transition: 2s;
+
+
+}
+
+.side-links:hover{
+
+  background-color: #292e2f;
+
+}
+
+
+.side-links-text{
+  font-size: 30px;
+  color: white;
+
+}
+
+.side-links .fas{
+
+  margin-right: 8px;
+  padding-top: 2px;
+
 }
