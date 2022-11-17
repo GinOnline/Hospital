@@ -3,8 +3,8 @@
 <?php
 include 'conection.php';
 session_start();
-ini_set('display_startup_errors',1); 
-ini_set('display_errors',1);
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
 error_reporting(-1);
 
 
@@ -52,7 +52,7 @@ error_reporting(-1);
 
 <body>
     <div>
-    <br>
+        <br>
         <p id="p" style="text-align: center;">Ingrese los Datos del Turno</p>
         <br>
         <form id="fondoForm" method="POST" action="carga_form_turno.php" enctype="multipart/form-data">
@@ -63,74 +63,65 @@ error_reporting(-1);
             </div>
             <div class="name_forms">
                 <label for="DNI">DNI del paciente</label>
-                <input id="DNI" type="numeric" class="inputElement"  list="dni" name="dni" placeholder="DNI" required>
+                <input id="DNI" type="numeric" class="inputElement" list="dni" name="dni" placeholder="DNI" required>
                 <a href="form_paciente.php" class="btn btn-success">Nuevo</a>
             </div>
             <!-- Message -->
             <?php
-                if (isset($_SESSION['message']) && $_SESSION['message']) {
-                    echo '<b class="errorMessage";>' . $_SESSION['message'] . '</b>';
-                    unset($_SESSION['message']);
-                }
+            if (isset($_SESSION['message']) && $_SESSION['message']) {
+                echo '<b class="errorMessage";>' . $_SESSION['message'] . '</b>';
+                unset($_SESSION['message']);
+            }
             ?>
-                <datalist id="dni" class="inputElement" style="margin-bottom: 3%;" name="obrassocial" required>
-                
+            <datalist id="dni" class="inputElement" style="margin-bottom: 3%;" name="obrassocial" required>
+
                 <?php
                 $sql = "SELECT * FROM paciente";
                 $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
                 while ($fila = mysqli_fetch_array($resultado)) {
 
-                    echo  '<option value="' . $fila['dni'] . '"> '.$fila['dni'] .'</option>';
+                    echo  '<option value="' . $fila['dni'] . '"> ' . $fila['dni'] . '</option>';
                 }
 
                 ?>
-                
-                </datalist>
-                   
-                
 
-            
-                <input type="text" class="inputElement" name="diag" placeholder="Diagnostico" required><br>
+            </datalist>
 
-                <input type="numeric" class="inputElement" name="medi" placeholder="Consumo de Medicamentos"  value="SIN CONSUMO DE MEDICAMENTOS"required><br>
 
-                <input type="numeric" class="inputElement" name="pato" placeholder="Patologias"  value="SIN PATOLOGIAS PREVIAS"required><br>
 
-                <select class="inputElement" style="margin-bottom: 3%;" name="zona" required>
+
+            <input type="text" class="inputElement" name="diag" placeholder="Diagnostico" required><br>
+
+            <input type="numeric" class="inputElement" name="medi" placeholder="Consumo de Medicamentos" value="SIN CONSUMO DE MEDICAMENTOS" required><br>
+
+            <input type="numeric" class="inputElement" name="pato" placeholder="Patologias" value="SIN PATOLOGIAS PREVIAS" required><br>
+
+            <select class="inputElement" style="margin-bottom: 3%;" name="zona" required>
+                <option value="" hidden>Seleccione la Especialidad</option>
                 <?php
                 $sql = "SELECT * FROM especialidades";
                 $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
                 while ($fila = mysqli_fetch_array($resultado)) {
 
-                    echo  '<option value="' . $fila['codigo'] . '"> '.$fila['descripcion'] .'</option>';
+                    echo  '<option value="' . $fila['codigo'] . '"> ' . $fila['descripcion'] . '</option>';
                 }
+                ?>
+            </select>
 
-                
-
-                    ?>  
-                    </select>
-
-                    <select class="inputElement" style="margin-bottom: 3%;" name="priori" required>
+            <select class="inputElement" style="margin-bottom: 3%;" name="priori" required>
+                <option value="" hidden>Seleccione la Prioridad</option>
                 <?php
                 $sql = "SELECT * FROM prioridades";
                 $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
                 while ($fila = mysqli_fetch_array($resultado)) {
 
-                    echo  '<option value="' . $fila['codigo'] . '"> '.$fila['descripcion'] .'</option>';
+                    echo  '<option value="' . $fila['codigo'] . '"> ' . $fila['descripcion'] . '</option>';
                 }
-
-                
-
-                    ?>  
-                    </select>
-
-                
-            
-
-
+                ?>
+            </select>
             <br>
             <input type="submit" id="cargarElemento" name="uploadBtn" value="Cargar" />
         </form>

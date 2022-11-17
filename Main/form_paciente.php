@@ -3,8 +3,8 @@
 <?php
 include 'conection.php';
 session_start();
-ini_set('display_startup_errors',1); 
-ini_set('display_errors',1);
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', 1);
 error_reporting(-1);
 
 
@@ -53,7 +53,7 @@ error_reporting(-1);
 
 <body>
     <div>
-    <br>
+        <br>
         <p id="p" style="text-align: center;">Ingrese los Datos del Paciente</p>
         <br>
         <form id="fondoForm" method="POST" action="carga_form_paciente.php" enctype="multipart/form-data">
@@ -63,36 +63,34 @@ error_reporting(-1);
                 <a id="volverAtras" onmouseover="cambioColor()" onmouseout="vueltaColor()" href="form_turno.php"> Volver</a>
             </div>
 
-                    
-                <input type="numeric" class="inputElement" name="dni" placeholder="DNI" required><br>
-            
-                <div class="name_forms">
-                    <input type = "text" class="inputElement" style="height: 2rem;" name="nombre" placeholder="Nombre" required> <span></span>
-                    <input type = "text" class="inputElement" style="height: 2rem;" name="apellido" placeholder="Apellido" required>
-                </div>
-            
-                <input type="text" class="inputElement" name="direccion" placeholder="Dirección" required><br>
 
-                <input type="numeric" class="inputElement" name="telefono" placeholder="Teléfono" required><br>
+            <input type="numeric" class="inputElement" name="dni" placeholder="DNI" required><br>
 
-                <select class="inputElement" style="margin-bottom: 3%;" name="obrassocial" required>
+            <div class="name_forms">
+                <input type="text" class="inputElement" style="height: 2rem;" name="nombre" placeholder="Nombre" required> <span></span>
+                <input type="text" class="inputElement" style="height: 2rem;" name="apellido" placeholder="Apellido" required>
+            </div>
+
+            <input type="text" class="inputElement" name="direccion" placeholder="Dirección" required><br>
+
+            <input type="numeric" class="inputElement" name="telefono" placeholder="Teléfono" required><br>
+
+            <select class="inputElement" style="margin-bottom: 3%;" name="obrassocial" required>
+                <option value="" hidden>Seleccione la Obra Social</option>
                 <?php
                 $sql = "SELECT * FROM obrassociales";
                 $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
                 while ($fila = mysqli_fetch_array($resultado)) {
 
-                    echo  '<option value="' . $fila['codigo'] . '"> '.$fila['nombre'] .'</option>';
+                    echo  '<option value="' . $fila['codigo'] . '"> ' . $fila['nombre'] . '</option>';
                 }
 
                 ?>
-                
+            </select>
 
-                   
-                </select>
-                
-                
-            
+
+
             <!-- Message -->
             <?php
             if (isset($_SESSION['message']) && $_SESSION['message'] && $_SESSION['message'] != 'File is successfully uploaded.') {

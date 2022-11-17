@@ -170,7 +170,8 @@ p{
 .n-entries{
     padding: 10px;
     border-radius: 10px;
-
+    font-size: 17px;
+    font-weight: 500;
 }
 .list-items{
     font-size: 20px;
