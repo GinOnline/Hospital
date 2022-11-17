@@ -55,7 +55,13 @@ if (!isset($usuario)) {
 
 <body>
   <header class="bg-dark">
-   
+    <nav class="up_nav">
+      <ul>
+        <li>
+        <span class="me-2"><button id="clock" type="button" class="header-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        </li>
+      </ul>
+    </nav>
 
     <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
       <div class="offcanvas-body p-0">
@@ -65,7 +71,7 @@ if (!isset($usuario)) {
               <div class="text-muted small fw-bold text-uppercase px-3">
                 <h2 class="logo">
                   <a style="text-decoration: none; margin:0;" href="index.php">
-                    <img src="./img/Pañol_3.png" height="115px">
+                    <img src="./img/hospital_logo.png" height="115px">
                   </a>
                 </h2>
               </div>
@@ -73,48 +79,36 @@ if (!isset($usuario)) {
 
             <li>
               <a href="#" class="nav-link px-3">
-                <span class="me-2"><a class="header-btn active" href="index.php">Inicio</a></span>
+                <span class="me-2"><a class="header-btn active" href="index.php"><i class="fas fa-home"></i>Inicio</a></span>
 
               </a>
             </li>
 
             <li>
               <a href="#" class="nav-link px-3">
-                <span class="me-2"><a class="header-btn" href="historial.php">Historial</a></span>
+                <span class="me-2"><a class="header-btn" href="historial.php"><i class="fas fa-history"></i>Historial</a></span>
 
               </a>
             </li>
             <li>
               <a href="#" class="nav-link px-3">
-                <span class="me-2"> <a class="header-btn" href="register.php">Regis.Usuario</a></span>
+                <span class="me-2"> <a class="header-btn" href="register.php"><i class="fas fa-user-plus"></i>Regis.Usuario</a></span>
 
               </a>
             </li>
             <li>
               <a href="#" class="nav-link px-3">
-                <span class="me-2"><a class="header-btn" href="profile.php">Perfil</a></span>
+                <span class="me-2"><a class="header-btn" href="profile.php"><i class="fas fa-user-circle"></i>Perfil</a></span>
 
               </a>
             </li>
             <li>
               <a href="#" class="nav-link px-3">
-                <span class="me-2"><a class="logOut" href="close.php">LogOut</a></span>
+                <span class="me-2"><a class="logOut" href="close.php"><i class="fas fa-sign-out-alt"></i> LogOut</a></span>
 
               </a>
             </li>
-            <li>
-              <button id="clock" type="button" class="header-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              </button>
-            </li>
-            <li>
-
-              <div id="clock" class="dark">
-                <div class="display">
-
-                  <div class="digits"></div>
-                </div>
-              </div>
-
+           
             </li>
             <li>
           </ul>
@@ -160,6 +154,7 @@ if (!isset($usuario)) {
       </div>
     </div>
   </header>
+  <br>
   <br>
   <br>
 
@@ -242,6 +237,8 @@ if (!isset($usuario)) {
 
 
     <!-- Items Body -->
+    <br>
+    <br>
 
     <div class="items-container display-flex row justify-content-center">
 
