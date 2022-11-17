@@ -60,9 +60,10 @@ error_reporting(-1);
 
             <div id="volverBoth">
                 <i class="fas fa-chevron-left" id="volverAtrasElemento"></i>
-                <a id="volverAtras" onmouseover="cambioColor()" onmouseout="vueltaColor()" href="index.php"> Volver</a>
+                <a id="volverAtras" onmouseover="cambioColor()" onmouseout="vueltaColor()" href="form_turno.php"> Volver</a>
             </div>
-            
+
+                    
                 <input type="numeric" class="inputElement" name="dni" placeholder="DNI" required><br>
             
                 <div class="name_forms">

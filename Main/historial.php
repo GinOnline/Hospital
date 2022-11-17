@@ -38,7 +38,7 @@ if (!isset($_SESSION['condicion_sb'])) {
     <header>
         <h2 class="logo">
             <a style="text-decoration: none; margin:0;" href="index.php">
-                <img src="./img/Pañol_3.png" height="115px">
+                <img src="./img/logo.png" height="115px">
             </a>
         </h2>
 

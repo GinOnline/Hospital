@@ -41,7 +41,7 @@ if (!empty($_POST['txtusuario']) && !empty($_POST['txtpassword'])) {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="icon" href="../img/Logo.ico">
+    <link rel="icon" href="../img/logo.ico">
     <link rel="stylesheet" href="css/1.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

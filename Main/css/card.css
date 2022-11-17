@@ -1,6 +1,5 @@
- /* boton agregar mas */
- .icon-btn {
-  
+.icon-btn {
+  width: 50px;
   height: 50px;
   border: 1px solid #cdcdcd;
   background: white;
@@ -10,12 +9,10 @@
   transition: width 0.2s ease-in-out;
   font-weight: 500;
   font-family: inherit;
-  overflow: visible;
-  
 }
 
 .add-btn:hover {
- width: 90px;
+  width: 120px;
 }
 
 .add-btn::before,
@@ -26,7 +23,7 @@
   height: 4px;
   width: 10px;
   top: calc(50% - 2px);
-  background: #082152;
+  background: seagreen;
 }
 
 .add-btn::after {
@@ -46,25 +43,56 @@
   outline: none;
 }
 
-
-.fa-times-circle{
-position: absolute;
-top:0;
-right: 0;
-margin-right: 5%;
-margin-top: 4%;
-background-color: transparent;
-border-style: none;
-color: #ffffff;
-font-size: 1.8rem;
-transition: 0.2s;
+.btn-txt {
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-.fa-times-circle:hover{
-
-  color: red;
+.add-btn:hover::before,
+.add-btn:hover::after {
+  width: 4px;
+  border-radius: 2px;
 }
 
+.add-btn:hover .btn-txt {
+  opacity: 1;
+}
+
+.add-icon::after,
+.add-icon::before {
+  transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  top: calc(50% - 10px);
+  background: seagreen;
+  overflow: hidden;
+}
+
+.add-icon::before {
+  left: 22px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.add-icon::after {
+  right: 22px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.add-btn:hover .add-icon::before {
+  left: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+
+.add-btn:hover .add-icon::after {
+  right: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
 
 /*CARD*/
 
@@ -81,7 +109,7 @@ a {
  
  .card:hover {
   opacity: 0.95;
-  transform: scale(1.10);
+  transform: scale(1);
  }
 
  .card-add {

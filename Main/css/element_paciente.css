@@ -29,6 +29,7 @@
     padding: 20px;
     } */
 
+
     *{
         background-color: #D6E4E5;
         color: #497174;;
@@ -107,7 +108,8 @@
 }
 
 label{
-    font-size: 22px;
+    padding-left: 20px;
+    font-size: 20px;
 }
 
     #cargarElemento{
@@ -146,7 +148,7 @@ label{
     .errorMessage{
         background-color: transparent;
         color: rgb(226, 168, 168);
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .name_forms{
@@ -193,4 +195,8 @@ label{
         border-radius: 10px;
         height: 40%;
         width: 32vh;
+    }
+    .btn-success{
+        border-radius: 12px;
+        margin-right: 19px;
     }

@@ -61,8 +61,18 @@ error_reporting(-1);
                 <i class="fas fa-chevron-left" id="volverAtrasElemento"></i>
                 <a id="volverAtras" onmouseover="cambioColor()" onmouseout="vueltaColor()" href="index.php"> Volver</a>
             </div>
-            
-                <input type="numeric" class="inputElement"  list="dni" name="dni" placeholder="DNI" required><br>
+            <div class="name_forms">
+                <label for="DNI">DNI del paciente</label>
+                <input id="DNI" type="numeric" class="inputElement"  list="dni" name="dni" placeholder="DNI" required>
+                <a href="form_paciente.php" class="btn btn-success">Nuevo</a>
+            </div>
+            <!-- Message -->
+            <?php
+                if (isset($_SESSION['message']) && $_SESSION['message']) {
+                    echo '<b class="errorMessage";>' . $_SESSION['message'] . '</b>';
+                    unset($_SESSION['message']);
+                }
+            ?>
                 <datalist id="dni" class="inputElement" style="margin-bottom: 3%;" name="obrassocial" required>
                 
                 <?php
@@ -119,13 +129,8 @@ error_reporting(-1);
 
                 
             
-            <!-- Message -->
-            <?php
-            if (isset($_SESSION['message']) && $_SESSION['message'] && $_SESSION['message'] != 'File is successfully uploaded.') {
-                echo '<b class="errorMessage";>' . $_SESSION['message'] . '</b>';
-                unset($_SESSION['message']);
-            }
-            ?>
+
+
             <br>
             <input type="submit" id="cargarElemento" name="uploadBtn" value="Cargar" />
         </form>

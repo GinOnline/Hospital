@@ -39,6 +39,11 @@ if (!empty($_POST['uploadBtn'])) {
         
     }
     }
+    else
+    {
+        $_SESSION['message'] = "Paciente no encontrado";
+        header("Location: form_turno.php");
+    }
     
 
     
@@ -47,7 +52,7 @@ if (!empty($_POST['uploadBtn'])) {
     $sql="INSERT INTO turnos  (dni,name_paciente,surname,diagnos ,medicamentos,patologias,zona,fecha_turno,time,time_estimated ,status,prioridad )VALUES('$dni','$name_person','$surname','$diag', '$medi','$pato','$zona','$currentTimeDate','$currentTimeHours','$endDate','PENDING','$priori')";
     //ejecutamos la sentencia de sql    
     $ejecutar=mysqli_query($con,$sql);
-    header("Location: form_paciente.php");
+    header("Location: form_turno.php");
     
     
 }
