@@ -8,7 +8,6 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-
 }
 
 /* ScrollBar */
@@ -81,10 +80,10 @@ header ul {
   color: #fff;
   cursor: pointer;
   transition: ease-out 0.5s;
-  border-radius: 30px;
+   border-radius: 30px;/*
   box-shadow: inset 0 0 0 0 #fff;
   background: #0a105f;
-  border: 2px solid #fff;
+  border: 2px solid #fff; */
 
   font-weight: 500;
 }
@@ -247,6 +246,7 @@ footer {
   border: none;
   background-color: #f4f2f2;
   margin-top: .1em;
+  
 }
 
 .search__button:hover {
@@ -272,4 +272,15 @@ footer{
 -webkit-box-shadow: 2px 0px 16px -1px rgba(0,0,0,0.59);
 -moz-box-shadow: 2px 0px 16px -1px rgba(0,0,0,0.59);
 
+}
+.btn-primary{
+  overflow-y: hidden;
+}
+.me-2{
+ 
+  justify-content: center;
+  align-items: center;
+}
+.clock{
+  float: right;
 }
