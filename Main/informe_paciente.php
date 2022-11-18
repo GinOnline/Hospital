@@ -198,31 +198,27 @@ if (isset($_SESSION['admin'])) {
 
             <div class="col-12 row" style="align-items:center; overflow:auto">
                 <!--Peticiones -->
-                <h2 class="col-9 btn_title">Informe Paciente AAA</h2>
+                <h2 class="col-6 btn_title">Informe Paciente Nombre</h2>
+                <button class="buttonDownload col-2" style="margin-right:2%;">Descargar CSV</button>
+                <button class="buttonDownload col-2">Historial clinico</button>
             </div>
-
-            <div class="col-7 row search-part" style="align-items:center;--bs-gutter-x:0;">
-            </div>
-
-        </div>
-        <br>
-        <div class="row justify-content-center info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-            <div class="col-3 row">
-                <h4>Hora ingreso: 14:23</h4>
-            </div>
-            <div class="col-2 row">
-                <h4>Sala 3</h4>
-            </div>
-
         </div>
         <br>
         <div class="row justify-content-center">
             <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-                
-                    <h4 >Diagnostico General</h4>
-                    <h4>Me parti los dedos</h4>
-                
-
+                <div class="col-5 row">
+                    <h4>Hora ingreso: 14:23</h4>
+                </div>
+                <div class="col-3 row">
+                    <h4>Sala 3</h4>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+                <h4>Diagnostico General</h4>
+                <p>Lorem ipsum dolor sit amet.</p>
             </div>
         </div>
         <br>
@@ -230,9 +226,9 @@ if (isset($_SESSION['admin'])) {
         <div class="row justify-content-center">
             <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
 
-                    <h4 class="col-12">Patologias</h4>
-                    <h4 lass="col-5">Diabetes tipo 2s</h4>
-                
+                <h4 class="col-12">Patologias</h4>
+                <hp lass="col-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo facere ratione ab praesentium velit nemo.</p>
+
 
             </div>
         </div>
