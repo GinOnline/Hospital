@@ -357,31 +357,32 @@ else{
 
       ?>
 
-
-        <form class="card <?php //print($vencimiento); 
-                          ?> col-3" action="changeStatus.php" method="POST">
-
-
-          <strong class="card_title"><?php echo ' ' . $fila["name_paciente"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
-                                      ?></strong>
-          <span class="info-container">
-            <?php
-
-            ?>
-            <input name="button" type="button" class="btn btn-danger" onclick="if(confirm('¿Estas seguro/a que ha sido atendido el llamado?')){
-              this.form.submit();}
-          else{ alert('Operación cancelada');}" title="Marcar como solucionado" value="X" class="fas fa-times-circle" <?php print('id = " ' . $fila['id_turno'] . '" ') ?></input>
-
-            <input name="id_card" <?php echo ' value = "' . $fila['id_turno'] . '" ' ?> style="display: none">
-            <p id="text1">Diagnostico: <?php print($fila['diagnos']); ?></p>
-            <p id="text1">Medicamentos: <?php print($fila['medicamentos']); ?></p>
-
-            <p class="fecha"><?php print($fila['time_estimated']); ?></p>
+       
+          <form class="card col-3" action="changeStatus.php" method="POST"> 
+            <a href="informe_paciente.php?turno=<?php echo $fila["id_turno"];?>" style="text-decoration: none; color:black;">
 
 
-          </span>
+            <strong class="card_title"><?php echo ' ' . $fila["name_paciente"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
+                                        ?></strong>
+            <span class="info-container">
+              <?php
 
-        </form>
+              ?>
+              <input name="button" type="button" class="btn btn-danger" onclick="if(confirm('¿Estas seguro/a que ha sido atendido el llamado?')){
+                this.form.submit();}
+            else{ alert('Operación cancelada');}" title="Marcar como solucionado" value="X" class="fas fa-times-circle" <?php print('id = " ' . $fila['id_turno'] . '" ') ?></input>
+
+              <input name="id_card" <?php echo ' value = "' . $fila['id_turno'] . '" ' ?> style="display: none">
+              <p id="text1">Diagnostico: <?php print($fila['diagnos']); ?></p>
+              <p id="text1">Medicamentos: <?php print($fila['medicamentos']); ?></p>
+
+              <p class="fecha"><?php print($fila['time_estimated']); ?></p>
+
+
+            </span>
+
+          </a></form>
+        
 
 
       <?php

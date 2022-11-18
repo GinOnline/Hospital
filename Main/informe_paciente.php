@@ -6,19 +6,29 @@ include 'conection.php';
 session_start();
 $usuario = $_SESSION['username'];
 
+if(isset($_SESSION['admin']))
+{
+  $HideForAdmin = 'style = "display:none;"';
+  $HideForUser = " ";
+
+}
+else{
+  $HideForAdmin  = " ";
+  $HideForUser  = $HideForAdmin = 'style = "display:none;"';
+}
+
+
 if (!isset($usuario)) {
 
     header('location: login.php');
-}
-if (isset($_SESSION['admin'])) {
-    $HideForAdmin = 'style = "display:none;"';
-    $HideForUser = " ";
-} else {
-    $HideForAdmin  = " ";
-    $HideForUser  = $HideForAdmin = 'style = "display:none;"';
-}
-
-?>
+  }
+  if (isset($_GET['turno'])) {
+    $_SESSION['turno'] = $_GET['turno'];
+  }
+  else{
+    $_SESSION['turno'] = 0;
+  }
+  ?>
 
 <head>
 
@@ -63,7 +73,7 @@ if (isset($_SESSION['admin'])) {
 
 <body>
     <header class="bg-dark">
-        <nav class="up_nav"><span style="margin-left:205px; color:white; font-size:35px"><?php echo  $_SESSION['show'] ?></span>
+        <nav class="up_nav"><span style="margin-left:205px; color:white; font-size:35px;"><?php echo  $_SESSION['show'] ?></span>
             <!-- Clock -->
 
             <!-- <ul>
@@ -192,25 +202,40 @@ if (isset($_SESSION['admin'])) {
     <br>
     <br>
     <br>
+     <?php  
 
+        $sql = "SELECT * FROM turnos WHERE id_turno = ". $_SESSION['turno']." ";
+        $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
+
+        if (mysqli_num_rows($resultado) == 0) {
+
+            header("Location: index.php");
+        }
+
+
+
+        //Generacion de las peticiones (cards)
+        while ($fila = mysqli_fetch_array($resultado)) {
+
+        ?>               
     <div style="margin-left:10%;--bs-gutter-x:0;">
         <div class="row justify-content-center --bs-gutter-x:0;">
 
             <div class="col-12 row" style="align-items:center; overflow:auto">
                 <!--Peticiones -->
-                <h2 class="col-6 btn_title">Informe Paciente Nombre</h2>
-                <button class="buttonDownload col-2" style="margin-right:2%;">Descargar CSV</button>
-                <button class="buttonDownload col-2">Historial clinico</button>
+                <h2 class="col-6 btn_title">Informe Paciente <?php echo ' ' . $fila["name_paciente"]. ' ' .$fila["surname"];?></h2>
+                <a href = "informe.pdf" download="informe.pdf" class="buttonDownload col-2" style="margin-right:2%;">Descargar PDF</a>
+                <a href = "historial.php?seachbar_input=<?php echo $fila["name_paciente"];?>" class="buttonDownload col-2">Historial clinico</a>
             </div>
         </div>
         <br>
         <div class="row justify-content-center">
             <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
                 <div class="col-5 row">
-                    <h4>Hora ingreso: 14:23</h4>
+                    <h4>Hora ingreso: <?php echo $fila["time"];?></h4>
                 </div>
                 <div class="col-3 row">
-                    <h4>Sala 3</h4>
+                    <h4>Sala <?php echo $fila["zona"];?></h4>
                 </div>
             </div>
         </div>
@@ -218,7 +243,7 @@ if (isset($_SESSION['admin'])) {
         <div class="row justify-content-center">
             <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
                 <h4>Diagnostico General</h4>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p><?php echo $fila["diagnos"];?></p>
             </div>
         </div>
         <br>
@@ -227,12 +252,21 @@ if (isset($_SESSION['admin'])) {
             <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
 
                 <h4 class="col-12">Patologias</h4>
-                <hp lass="col-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo facere ratione ab praesentium velit nemo.</p>
+                <hp lass="col-5"><?php echo $fila["patologias"];?></p>
 
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+
+                <h4 class="col-12">Medicamentos previos</h4>
+                <hp lass="col-5"><?php echo $fila["medicamentos"];?></p>
 
             </div>
         </div>
     </div>
+    <?php }?>
 
 
 

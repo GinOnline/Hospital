@@ -421,9 +421,6 @@ if (isset($_SESSION['admin'])) {
                         ?>
                     </tbody>
                 </table>
-                <a href="Informe.pdf" download="Informe.pdf" class="download-btn"><span>Download</span><span>PDF</span></a>
-                <a href="Informe.pdf" download="Informe.csv" class="download-btn"><span>Download</span><span>CSV</span></a>
-   
                 <div class="footer-tools">
                     <form class="list-items dark" id="maxResultados" action="" method="POST">
                         Mostrar
