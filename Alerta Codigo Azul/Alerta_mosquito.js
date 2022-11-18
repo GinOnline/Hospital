@@ -26,8 +26,8 @@ client.on('message', function (topic, message) {
   client.end()
 })
 
-mosquitto_pub -d -h localhost -p 1883 -t /alerta -m "1"
+mosquitto_pub -d -h localhost -p 1883 -t /alerta -m "ATENCION: Código Azul Quirofano 8"
 
-mosquitto_sub -d -h localhost -p 1883 -t /alert
+mosquitto_sub -d -h localhost -p 1883 -t /alerta
 
 

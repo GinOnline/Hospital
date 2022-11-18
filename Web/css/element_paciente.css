@@ -1,0 +1,202 @@
+/* input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    } */
+
+
+    *{
+        background-color: #D6E4E5;
+        color: #497174;;
+        font-size: 20px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 800;
+    }
+
+    #p{
+        font-size: 50px;
+        font-family: 'Signika', sans-serif;
+    }
+
+    #fondoForm{
+        background-color: #497174b4;
+        width: 78vh;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2%;
+        border-radius: 10px;
+        border-color: #497174;
+        border-width: 3px;
+        border-style: solid;
+    }
+
+    #volverAtras{
+        font-size: 22px;
+        background-color: #02112400;
+        color: white;
+        text-decoration: none;
+    }
+
+    #volverBoth{
+        background-color: #072a5700;
+        margin-bottom: 4%;
+    }
+    
+    #volverAtrasElemento{
+        color: white;
+        background-color: #02112400;
+    }
+    
+    #volverAtrasElemento:hover{
+        color:red;
+        cursor: pointer;
+    }
+
+    .inputElement{
+        background-color: transparent;
+        color: #ffffff;
+        font-size: 21px;
+        border-width: 3.2px;
+        border-color: hsl(0, 0%, 100%);
+        border-radius: 10px;
+        height: 41px;
+        width: 95.6%;
+        margin: 5px 10px;
+        text-align: center;
+    }
+
+    .inputElement::placeholder{
+        background-color: transparent;
+        color: #ffffff;
+        border-color: #401464;
+        
+    }
+
+#subirArchivo, label{
+    background-color: transparent;
+    color: #fff;
+    width: 39vh;    
+}
+
+ #subirArchivo{
+    font-size: 16px;
+}
+
+label{
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+    #cargarElemento{
+        background-color: #d2dbe4;
+        color: #3f6f7c;
+        font-size: 23px;
+        width: 30%;
+        height: 15%;
+        border-radius: 10px;
+        margin-left: 35%;
+        border-color: #0a2c36;
+        transition: .3s;
+        cursor: pointer;
+        margin-bottom: 10px;
+        padding: 2px;
+        margin-top: 2.5vh;
+        border-width: 3px;
+        align-items: center;
+        justify-content: center;
+    }
+
+        
+    #cargarElemento:hover{
+        background-color: #497174b4;
+        color: #ffffff;
+        border-color: #0a2c36;
+        cursor: pointer;
+    }
+
+    #cargarElemento:active{
+        color: #a6b9cc;
+        background-color: #0a2c36;
+        border-color: #1d3f49;
+    }
+
+    .errorMessage{
+        background-color: transparent;
+        color: rgb(226, 168, 168);
+        font-size: 18px;
+    }
+
+    .name_forms{
+        justify-content: space-between;
+       
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        background-color: transparent;
+    }
+    .personal_info, .personal_info .inputElement{
+        background-color: #2c467a;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.658);
+        border-width: 1px;
+        border-radius: 10px;
+        
+        
+    }
+
+    .inputRequest{
+        background-color: transparent;
+        color: #ffffff;
+        border-width: 3.2px;
+        border-color: hsl(0, 0%, 100%);
+        border-radius: 10px;
+        height: 8%;
+        width: 80%;
+       
+        margin-left: 2%;
+        text-align: center;
+    }
+    
+    .inputRequest::placeholder{
+        color:#cfcfcfbd;
+        font-weight: 900;
+    }
+    
+    #inputTime{
+        background-color: transparent;
+        color: #ffffff;
+        border-width: 3.2px;
+        border-color: hsl(0, 0%, 100%);
+        border-radius: 10px;
+        height: 40%;
+        width: 32vh;
+    }
+    .btn-success{
+        border-radius: 12px;
+        margin-right: 19px;
+    }

@@ -1,0 +1,364 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c50a3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f7f7f7;
+  border-radius: 5rem;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #dbf1fa;
+  overflow-x: hidden;
+  color: #fff
+}
+
+
+header {
+  margin-top: 0px;
+  position: flex;
+  display: flex;
+  background-color: #bfe0ec;
+  /*#212529;*/
+
+  color: rgb(107, 29, 29);
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  padding: 45px 100px;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 2px -1px 16px 4px rgba(0, 0, 0, 0.59);
+  -webkit-box-shadow: 2px -1px 16px 4px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 2px -1px 16px 4px rgba(0, 0, 0, 0.59);
+}
+
+header .md {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 4vh;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul {
+  font-size: 2.5vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.header-btn {
+  text-decoration: none;
+  padding: 3px 7px; 
+  
+
+  color: #fff;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+   border-radius: 30px;/*
+  box-shadow: inset 0 0 0 0 #fff;
+  background: #0a105f;
+  border: 2px solid #fff; */
+
+  font-weight: 500;
+}
+
+.me-2 {
+  font-size: 20px;
+  height: 40px;
+}
+
+.header-btn:hover,
+header ul li a.active {
+  color: #0a105f;
+  box-shadow: inset 0 -100px 0 0 #fff;
+  border: 2px solid #fff;
+
+  font-weight: 900;
+}
+
+.logOut {
+  text-decoration: none;
+  padding: 3px 7px;
+
+  color: #fff;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border-radius: 30px;
+  box-shadow: inset 0 0 0 0 #4f1798;
+  background: transparent;
+  border: 2px solid #fff;
+
+  font-weight: 900;
+
+}
+
+.logOut:hover {
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #4f1798;
+  border: 2px solid #fff;
+  font-weight: 900;
+}
+
+
+.logo {
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.d-flex button {
+  height: 40px;
+  background-color: #0a5252;
+  color: #fff;
+  border-color: #fff;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.d-flex button:hover {
+  background-color: #c5f1ff;
+  color: #0a595f;
+  border-color: #0a5c5f;
+  font-weight: 600;
+}
+
+.d-flex button:active {
+  background-color: #93cac7;
+  color: #fff;
+  border-color: #075248;
+  font-weight: 600;
+}
+
+.d-flex button:focus {
+  background-color: #93cac7;
+  color: #fff;
+  border-color: #075248;
+  font-weight: 600;
+}
+
+.btn_title {
+  margin-left: 9vh;
+  /*margin-left:68px;*/
+  margin-right: 8%;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.footer-btn {
+  font-size: 28px;
+  position: absolute;
+  color: #a12c2c;
+
+  top: 0px;
+  right: 5px;
+  border-color: transparent;
+  background-color: transparent;
+  margin-bottom: 40px;
+
+}
+
+footer {
+
+  background-color: #403e42;
+  color: white;
+  font-size: 17px;
+  padding: 11px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 80%;
+
+}
+
+.easter_egg{
+
+  cursor: default;
+}
+
+
+/* SearchBar */
+.search_a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  width: 12em;
+  transition: all ease-in-out .5s;
+  margin-right: -2rem;
+}
+
+.search__input:hover,
+.search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+  outline: none;
+  background-color: #f0eeee;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #ccc;
+}
+
+.search__input:focus+.search__button {
+  background-color: #f0eeee;
+}
+
+.search__button {
+  border: none;
+  background-color: #f4f2f2;
+  margin-top: .1em;
+  
+}
+
+.search__button:hover {
+  cursor: pointer;
+}
+
+.search__icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: #b4b4b4;
+}
+
+/* Marca de agua Guiño Guiño */
+footer{
+  width: 100%;
+  margin: 0px;
+  margin-top: 10vh;
+  padding: 30px;
+  background-color: rgb(46, 46, 46);
+  position: relative;
+
+  box-shadow: 2px 0px 16px -1px rgba(0,0,0,0.59);
+-webkit-box-shadow: 2px 0px 16px -1px rgba(0,0,0,0.59);
+-moz-box-shadow: 2px 0px 16px -1px rgba(0,0,0,0.59);
+
+}
+.btn-primary{
+  overflow-y: hidden;
+}
+.me-2{
+ 
+  justify-content: center;
+  align-items: center;
+}
+.clock{
+  float: right;
+}
+
+/* SideBar links */
+
+.side-links{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6px;
+  transition: 2s;
+
+
+}
+
+.side-links:hover{
+
+  background-color: #292e2f;
+
+}
+
+
+.side-links-text{
+  font-size: 30px;
+  color: white;
+
+}
+
+.side-links .fas{
+
+  margin-right: 8px;
+  padding-top: 2px;
+
+}
+h4{
+  font-weight: 800;
+}
+.vacio{
+  padding-top: 90px;
+  text-align: center;
+  font-size: 35px;
+  color: gray;
+}
+
+/*Prioridad*/
+
+.prioridad-1
+{
+  color:red;
+  font-size: 18px;
+  position: absolute;
+  right: 40%;
+  bottom: 0px;
+  
+}
+
+.prioridad-2
+{
+  color:green;
+  font-size: 18px;
+  position: absolute;
+  right: 40%;
+  bottom: 0px;
+}
+
+/*Name*/
+
+.name-surname{
+  margin: 8px;
+  font-size: 18px;
+}
