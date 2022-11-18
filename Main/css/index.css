@@ -328,3 +328,9 @@ footer{
 h4{
   font-weight: 800;
 }
+.vacio{
+  padding-top: 90px;
+  text-align: center;
+  font-size: 35px;
+  color: gray;
+}
