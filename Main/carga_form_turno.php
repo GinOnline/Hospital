@@ -27,7 +27,7 @@ if (!empty($_POST['uploadBtn'])) {
     
 
     echo $dni;
-    $sql = "SELECT title,surname FROM paciente WHERE dni = '".$dni."' ";
+    $sql = "SELECT name_paciente,surname FROM paciente WHERE dni = '".$dni."' ";
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {

@@ -233,13 +233,13 @@ if (isset($_GET['turno'])) {
                     <h2 class="col-5 btn_title">Informe Paciente</h2>
                     <a id="downloadPDF" href="informe.pdf" download="informe.pdf" class="buttonDownload col-2" style="margin-right:2%;">Descargar PDF</a>
                     <a id="downloadCSV" href="informe.csv" download="informe.csv" class="buttonDownload col-2" >Descargar CSV</a>
-                    <a href="historial.php?seachbar_input=<?php echo $fila["name_paciente"]; ?>" class="btn btn-primary col-2 buttonHistorial">Historial clinico</a>
+                    <a href="historial.php?seachbar_input=<?php echo $fila["title"]; ?>" class="btn btn-primary col-2 buttonHistorial">Historial clinico</a>
                 </div>
             </div>
             <br><br>
             <div class="row justify-content-center">
                 <div class="row justify-content-center col-8 info-ingre" >
-                    <h4 style="font-size: 28px;"><span style="font-weight: bold;">Nombre: </span><?php echo ' ' . $fila["name_paciente"] . ' ' . $fila["surname"]; ?></h4>
+                    <h4 style="font-size: 28px;"><span style="font-weight: bold;">Nombre: </span><?php echo ' ' . $fila["title"] . ' ' . $fila["surname"]; ?></h4>
                 </div>
             </div>
             <br>
@@ -257,7 +257,7 @@ if (isset($_GET['turno'])) {
             <div class="row justify-content-center">
                 <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
                     <h4>Diagnostico General</h4>
-                    <p><?php echo $fila["diagnos"]; ?></p>
+                    <p><?php echo $fila["description"]; ?></p>
                 </div>
             </div>
             <br>
@@ -281,31 +281,7 @@ if (isset($_GET['turno'])) {
             </div>
         </div>
         <br>
-        <div class="row justify-content-center">
-            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-                <h4>Diagnostico General</h4>
-                <p><?php echo $fila["description"];?></p>
-            </div>
-        </div>
-        <br>
 
-        <div class="row justify-content-center">
-            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-
-                <h4 class="col-12">Patologias</h4>
-                <hp lass="col-5"><?php echo $fila["patologias"];?></p>
-
-            </div>
-        </div>
-        <br>
-        <div class="row justify-content-center">
-            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-
-                <h4 class="col-12">Medicamentos previos</h4>
-                <hp lass="col-5"><?php echo $fila["medicamentos"];?></p>
-
-            </div>
-        </div>
     </div>
     <?php }?>
 

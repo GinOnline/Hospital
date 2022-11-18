@@ -15,7 +15,7 @@ if (!empty($_POST['dni']) && !empty($_POST['apellido'])) {
     $obra = $_POST['obrassocial'];
 
 
-    $sql="INSERT INTO paciente  (title,surname,dire,phone,obra,dni)VALUES('$name','$surname', '$dire','$phone','$obra','$dni')";
+    $sql="INSERT INTO paciente  (name_paciente,surname,dire,phone,obra,dni)VALUES('$name','$surname', '$dire','$phone','$obra','$dni')";
     //ejecutamos la sentencia de sql    
     $ejecutar=mysqli_query($con,$sql);
     header("Location: form_paciente.php");
