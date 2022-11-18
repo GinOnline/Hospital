@@ -256,8 +256,8 @@ if (isset($_SESSION['admin'])) {
 
               ?>
               <optgroup label="Ordenar por Nombre">
-                <option value="name_paciente ASC">A-Z</option>
-                <option value="name_paciente DESC">Z-A</option>
+                <option value="title ASC">A-Z</option>
+                <option value="title DESC">Z-A</option>
               </optgroup>
 
               <optgroup label="Ordenar por DNI">
@@ -311,11 +311,13 @@ if (isset($_SESSION['admin'])) {
 
       if (isset($_SESSION['admin'])) {
         $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND
-        (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
+        (title LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
         ORDER BY " . $seleccionador . "";
-      } else {
-        $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND zona = (SELECT especialidad FROM register WHERE name2 = '" . $_SESSION['username'] . "') AND
-        (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
+
+      }
+      else{
+        $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND zona = (SELECT especialidad FROM register WHERE name2 = '".$_SESSION['username']."') AND
+        (title LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
         ORDER BY " . $seleccionador . "";
       }
 
@@ -352,22 +354,21 @@ if (isset($_SESSION['admin'])) {
 
       ?>
 
+       
+          <form class="card col-3" action="changeStatus.php" method="POST">
+          <input name="button" type="button" class="btn btn-danger" onclick="if(confirm('¿Estas seguro/a que ha sido atendido el llamado?')){
+                this.form.submit();}
+            else{ alert('Operación cancelada');}" title="Marcar como solucionado" value="X" class="fas fa-times-circle" <?php print('id = " ' . $fila['id'] . '" ') ?></input>
 
-        <form class="card col-3" action="changeStatus.php" method="POST">
-          <a href="informe_paciente.php?turno=<?php echo $fila["id_turno"]; ?>" style="text-decoration: none; color:black;">
-          <br>
-            <strong class="card_title"><?php echo ' ' . $fila["name_paciente"] . ' ' . $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
+
+            <a href="informe_paciente.php?turno=<?php echo $fila["id"];?>" style="text-decoration: none; color:black;">
+
+            <strong class="card_title"><?php echo ' ' . $fila["title"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
                                         ?></strong>
             <span class="info-container">
-              <?php
 
-              ?>
-              <input name="button" type="button" class="btn btn-danger" onclick="if(confirm('¿Estas seguro/a que ha sido atendido el llamado?')){
-                this.form.submit();}
-            else{ alert('Operación cancelada');}" title="Marcar como solucionado" value="X" class="fas fa-times-circle" <?php print('id = " ' . $fila['id_turno'] . '" ') ?></input>
-
-              <input name="id_card" <?php echo ' value = "' . $fila['id_turno'] . '" ' ?> style="display: none">
-              <p id="text1">Diagnostico: <?php print($fila['diagnos']); ?></p>
+              <input name="id_card" <?php echo ' value = "' . $fila['id'] . '" ' ?> style="display: none">
+              <p id="text1">Diagnostico: <?php print($fila['description']); ?></p>
               <p id="text1">Medicamentos: <?php print($fila['medicamentos']); ?></p>
 
               <p class="fecha"><?php print($fila['time_estimated']); ?></p>
@@ -377,7 +378,7 @@ if (isset($_SESSION['admin'])) {
 
           </a>
         </form>
-
+        
 
 
       <?php

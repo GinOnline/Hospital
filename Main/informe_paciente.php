@@ -211,8 +211,8 @@ if (isset($_GET['turno'])) {
     <br>
     <?php
 
-    $sql = "SELECT * FROM turnos WHERE id_turno = " . $_SESSION['turno'] . " ";
-    $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
+        $sql = "SELECT * FROM turnos WHERE id = ". $_SESSION['turno']." ";
+        $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
     if (mysqli_num_rows($resultado) == 0) {
 
@@ -280,7 +280,34 @@ if (isset($_GET['turno'])) {
                 </div>
             </div>
         </div>
-    <?php } ?>
+        <br>
+        <div class="row justify-content-center">
+            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+                <h4>Diagnostico General</h4>
+                <p><?php echo $fila["description"];?></p>
+            </div>
+        </div>
+        <br>
+
+        <div class="row justify-content-center">
+            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+
+                <h4 class="col-12">Patologias</h4>
+                <hp lass="col-5"><?php echo $fila["patologias"];?></p>
+
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+
+                <h4 class="col-12">Medicamentos previos</h4>
+                <hp lass="col-5"><?php echo $fila["medicamentos"];?></p>
+
+            </div>
+        </div>
+    </div>
+    <?php }?>
 
 
 

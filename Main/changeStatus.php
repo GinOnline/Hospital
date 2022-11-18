@@ -9,12 +9,12 @@ include 'conection.php';
     // Cambiamos el status a Devuelto  
     $eliminar = "UPDATE turnos
         SET status = 'ACCEPT'
-        WHERE id_turno = ". $id." ";
+        WHERE id = ". $id." ";
     mysqli_query($con, $eliminar) or die(mysqli_error($con));
 
 
     // Seleccionamos el nombre del elemento
-    $sql = "SELECT * FROM turnos WHERE id_turno = '".$id."'";
+    $sql = "SELECT * FROM turnos WHERE id = '".$id."'";
     $res = mysqli_query($con,$sql) or die(mysqli_error($con));
     $request = mysqli_fetch_array($res);
 
