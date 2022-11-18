@@ -328,12 +328,9 @@ else{
 
       if (mysqli_num_rows($resultado) == 0) { ?>
         <!-- Add card -->
-        <a class="card-add col-3" href="form_turno.php">
-          <strong class="card_title"></strong>
-          <div class="card__body">
-            <span>+</span>
-          </div>
-        </a>
+
+            <span class="vacio col-7">No tienes llamados pendientes</span>
+
       <?php
       }
 
