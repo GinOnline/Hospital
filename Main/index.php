@@ -209,7 +209,7 @@ if (isset($_SESSION['admin'])) {
 
       <div class="col-5 row" style="align-items:center; overflow:auto">
         <!--Peticiones -->
-        <h2 class="col-5 btn_title">Llamados</h2>
+        <h2 class="col-5 btn_title">Llamados</h2>      
 
         <!--Agregar nueva -->
         <a class="col-4" href="form_turno.php" <?php echo $HideForUser; ?>>
@@ -363,7 +363,7 @@ if (isset($_SESSION['admin'])) {
 
             <a href="informe_paciente.php?turno=<?php echo $fila["id"];?>" style="text-decoration: none; color:black;">
 
-            <strong class="card_title"><?php echo ' ' . $fila["title"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
+            <strong class="card_title name-surname"><?php echo ' ' . $fila["title"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
                                         ?></strong>
             <span class="info-container">
 
@@ -372,6 +372,18 @@ if (isset($_SESSION['admin'])) {
               <p id="text1">Medicamentos: <?php print($fila['medicamentos']); ?></p>
 
               <p class="fecha"><?php print($fila['time_estimated']); ?></p>
+              <?php
+
+                $query = mysqli_query($con, "SELECT * FROM prioridades WHERE codigo = " .$fila['prioridad'] . "");
+                while ($fila = mysqli_fetch_array($query)) { ?>
+
+                  <p class = "prioridad-<?php print($fila['codigo']); ?>"><?php print($fila['descripcion']); ?></p>
+
+                <?php
+                }
+                ?>
+
+
 
 
             </span>

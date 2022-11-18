@@ -34,7 +34,7 @@ if (!empty($_POST['uploadBtn'])) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 
-        $name_person = $row["title"];
+        $name_person = $row["name_paciente"];
         $surname = $row["surname"];
         
     }

@@ -334,3 +334,31 @@ h4{
   font-size: 35px;
   color: gray;
 }
+
+/*Prioridad*/
+
+.prioridad-1
+{
+  color:red;
+  font-size: 18px;
+  position: absolute;
+  right: 40%;
+  bottom: 0px;
+  
+}
+
+.prioridad-2
+{
+  color:green;
+  font-size: 18px;
+  position: absolute;
+  right: 40%;
+  bottom: 0px;
+}
+
+/*Name*/
+
+.name-surname{
+  margin: 8px;
+  font-size: 18px;
+}
