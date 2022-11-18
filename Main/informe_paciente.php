@@ -256,7 +256,7 @@ if (!isset($usuario)) {
 
             </div>
         </div>
-
+        <br>
         <div class="row justify-content-center">
             <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
 
