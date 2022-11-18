@@ -362,10 +362,13 @@ if (isset($_SESSION['admin'])) {
 
 
             <a href="informe_paciente.php?turno=<?php echo $fila["id"];?>" style="text-decoration: none; color:black;">
+            <br>
 
             <strong class="card_title name-surname"><?php echo ' ' . $fila["title"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
                                         ?></strong>
             <span class="info-container">
+            <br>
+            <br>
 
               <input name="id_card" <?php echo ' value = "' . $fila['id'] . '" ' ?> style="display: none">
               <p id="text1">Diagnostico: <?php print($fila['description']); ?></p>
