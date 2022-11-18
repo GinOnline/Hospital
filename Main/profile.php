@@ -8,18 +8,37 @@ session_start();
 $usuario = $_SESSION['username'];
 
 
+//ADMIN
+if(isset($_SESSION['admin']))
+{
+    $sql = "SELECT user FROM admins WHERE user = '".$usuario."' "; 
+    $result = $con->query($sql);
 
-
-$sql = "SELECT DNI FROM register WHERE name2 = '".$usuario."' ";
-$result = $con->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    $ids_user = $row["DNI"];
-    
-  }
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $ids_user = $row["user"];
+        
+    }
+    }
 }
+//USER
+else{
+
+    $sql = "SELECT DNI FROM register WHERE name2 = '".$usuario."' ";
+    $result = $con->query($sql);
+    
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+        $ids_user = $row["DNI"];
+        
+      }
+    }
+    
+
+}
+
 
 
  $table_profile = 'profile_'.$ids_user;
