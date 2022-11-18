@@ -333,7 +333,7 @@ if (isset($_SESSION['admin'])) {
                             $array = explode(",", $_SESSION['condicion_sb']);
                             foreach ($array as $key) {
                                 $final_prompt .= " AND 
-                (dni LIKE '%" . $key . "%' OR patologias LIKE '%" . $key . "%' OR name_paciente LIKE '%" . $key . "%' OR medicamentos LIKE '%" . $key . "%' OR diagnos LIKE '%" . $key . "%')";
+                (dni LIKE '%" . $key . "%' OR patologias LIKE '%" . $key . "%' OR title LIKE '%" . $key . "%' OR medicamentos LIKE '%" . $key . "%' OR description LIKE '%" . $key . "%')";
                             }
                             // print($final_prompt);
                         } else {
@@ -411,7 +411,7 @@ if (isset($_SESSION['admin'])) {
                                 <th><?php print($fila['id_turno']); ?></th>
                                 <td><?php print($fila['dni']); ?></td>
                                 <td><?php print($fila['name_paciente'] . ' ' . $fila['surname']); ?></td>
-                                <td><?php print($fila['diagnos']); ?></td>
+                                <td><?php print($fila['description']); ?></td>
                                 <td><?php print($fila['medicamentos']); ?></td>
                                 <td><?php print($fila['patologias']); ?></td>
                                 <td><?php print($fila['fecha_turno']); ?></td>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.1deb5ubuntu1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 18, 2022 at 01:55 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.15
+-- Host: localhost:3306
+-- Generation Time: Nov 18, 2022 at 08:31 AM
+-- Server version: 8.0.31-0ubuntu0.22.04.1
+-- PHP Version: 8.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admins` (
   `user` varchar(60) NOT NULL,
   `pass` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admins`
@@ -47,9 +47,9 @@ INSERT INTO `admins` (`user`, `pass`) VALUES
 --
 
 CREATE TABLE `especialidades` (
-  `codigo` int(11) NOT NULL,
+  `codigo` int NOT NULL,
   `descripcion` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `especialidades`
@@ -84,9 +84,9 @@ INSERT INTO `especialidades` (`codigo`, `descripcion`) VALUES
 --
 
 CREATE TABLE `obrassociales` (
-  `codigo` int(11) NOT NULL,
+  `codigo` int NOT NULL,
   `nombre` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `obrassociales`
@@ -111,14 +111,14 @@ INSERT INTO `obrassociales` (`codigo`, `nombre`) VALUES
 --
 
 CREATE TABLE `paciente` (
-  `id_paciente` int(10) UNSIGNED NOT NULL,
+  `id_paciente` int UNSIGNED NOT NULL,
   `name_paciente` varchar(20) NOT NULL,
   `surname` varchar(20) NOT NULL,
   `dire` varchar(30) NOT NULL,
   `phone` varchar(10) NOT NULL,
-  `obra` int(11) NOT NULL,
-  `dni` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `obra` int NOT NULL,
+  `dni` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `paciente`
@@ -134,9 +134,9 @@ INSERT INTO `paciente` (`id_paciente`, `name_paciente`, `surname`, `dire`, `phon
 --
 
 CREATE TABLE `prioridades` (
-  `codigo` int(11) NOT NULL,
+  `codigo` int NOT NULL,
   `descripcion` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `prioridades`
@@ -153,13 +153,13 @@ INSERT INTO `prioridades` (`codigo`, `descripcion`) VALUES
 --
 
 CREATE TABLE `profile_123` (
-  `id_profile` int(6) UNSIGNED NOT NULL,
+  `id_profile` int UNSIGNED NOT NULL,
   `user` varchar(15) NOT NULL,
   `status` varchar(30) NOT NULL,
   `biography` varchar(90) NOT NULL,
   `phone` varchar(10) NOT NULL,
   `url_profile` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `profile_123`
@@ -177,13 +177,13 @@ INSERT INTO `profile_123` (`id_profile`, `user`, `status`, `biography`, `phone`,
 --
 
 CREATE TABLE `profile_3213` (
-  `id_profile` int(10) UNSIGNED NOT NULL,
+  `id_profile` int UNSIGNED NOT NULL,
   `user` varchar(15) NOT NULL,
   `status` varchar(30) NOT NULL,
   `biography` varchar(90) NOT NULL,
   `phone` varchar(10) NOT NULL,
   `url_profile` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `profile_3213`
@@ -205,13 +205,13 @@ INSERT INTO `profile_3213` (`id_profile`, `user`, `status`, `biography`, `phone`
 --
 
 CREATE TABLE `profile_admin` (
-  `id_profile` int(6) UNSIGNED NOT NULL,
+  `id_profile` int UNSIGNED NOT NULL,
   `user` varchar(15) NOT NULL,
   `status` varchar(30) NOT NULL,
   `biography` varchar(90) NOT NULL,
   `phone` varchar(10) NOT NULL,
   `url_profile` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `profile_admin`
@@ -227,15 +227,15 @@ INSERT INTO `profile_admin` (`id_profile`, `user`, `status`, `biography`, `phone
 --
 
 CREATE TABLE `register` (
-  `DNI` int(11) NOT NULL,
-  `num_mat` int(11) NOT NULL,
+  `DNI` int NOT NULL,
+  `num_mat` int NOT NULL,
   `name2` varchar(20) NOT NULL,
   `surname` varchar(30) NOT NULL,
   `especialidad` varchar(20) DEFAULT NULL,
   `email` varchar(20) NOT NULL,
   `tel` varchar(15) NOT NULL,
   `password` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `register`
@@ -252,11 +252,11 @@ INSERT INTO `register` (`DNI`, `num_mat`, `name2`, `surname`, `especialidad`, `e
 --
 
 CREATE TABLE `turnos` (
-  `id_turno` int(10) UNSIGNED NOT NULL,
+  `id_turno` int UNSIGNED NOT NULL,
   `dni` varchar(10) NOT NULL,
-  `name_paciente` varchar(20) NOT NULL,
+  `title` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `surname` varchar(20) NOT NULL,
-  `diagnos` varchar(120) NOT NULL,
+  `description` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `medicamentos` varchar(60) NOT NULL,
   `patologias` varchar(30) NOT NULL,
   `zona` varchar(15) NOT NULL,
@@ -264,14 +264,14 @@ CREATE TABLE `turnos` (
   `time` varchar(20) NOT NULL,
   `time_estimated` varchar(20) NOT NULL,
   `status` varchar(15) NOT NULL,
-  `prioridad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `prioridad` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `turnos`
 --
 
-INSERT INTO `turnos` (`id_turno`, `dni`, `name_paciente`, `surname`, `diagnos`, `medicamentos`, `patologias`, `zona`, `fecha_turno`, `time`, `time_estimated`, `status`, `prioridad`) VALUES
+INSERT INTO `turnos` (`id_turno`, `dni`, `title`, `surname`, `description`, `medicamentos`, `patologias`, `zona`, `fecha_turno`, `time`, `time_estimated`, `status`, `prioridad`) VALUES
 (17, '23213', 'asd', 'asd', 'Dolor de cabeza', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', 'Guardia', '2022-11-16', '16:48:50', '17:03:50', 'ACCEPT', 1),
 (18, '23213', 'asd', 'asd', 'Dolor de muela', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', 'Cardiologia', '2022-11-16', '20:56:43', '21:11:43', 'PENDING', 2),
 (19, '23213', 'asd', 'asd', 'Dolor de muela', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', 'Cardiologia', '2022-11-16', '21:27:36', '21:42:36', 'PENDING', 2),
@@ -290,7 +290,8 @@ INSERT INTO `turnos` (`id_turno`, `dni`, `name_paciente`, `surname`, `diagnos`, 
 (32, '23213', 'asd', 'asd', '123', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', '8', '2022-11-16', '23:45:08', '00:00:08', 'PENDING', 2),
 (33, '23213', 'asd', 'asd', '123123', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', '4', '2022-11-16', '23:45:48', '00:00:48', 'PENDING', 1),
 (34, '44370506', '', '', '123132', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', '1', '2022-11-17', '21:27:12', '21:42:12', 'PENDING', 1),
-(35, '23213', 'asd', 'asd', '321312', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', '1', '2022-11-17', '21:27:18', '21:42:18', 'PENDING', 1);
+(35, '23213', 'asd', 'asd', '321312', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', '1', '2022-11-17', '21:27:18', '21:42:18', 'PENDING', 1),
+(36, '23213', 'asd', 'asd', 'Dolor de Cabeza', 'SIN CONSUMO DE MEDICAMENTOS', 'SIN PATOLOGIAS PREVIAS', '5', '2022-11-18', '08:29:49', '08:44:49', 'PENDING', 2);
 
 -- --------------------------------------------------------
 
@@ -299,10 +300,10 @@ INSERT INTO `turnos` (`id_turno`, `dni`, `name_paciente`, `surname`, `diagnos`, 
 --
 
 CREATE TABLE `zonas` (
-  `id_zona` int(11) NOT NULL,
+  `id_zona` int NOT NULL,
   `nombre` varchar(20) NOT NULL,
   `descripcion` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `zonas`
@@ -373,49 +374,49 @@ ALTER TABLE `turnos`
 -- AUTO_INCREMENT for table `especialidades`
 --
 ALTER TABLE `especialidades`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `codigo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `obrassociales`
 --
 ALTER TABLE `obrassociales`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `codigo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id_paciente` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_paciente` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `prioridades`
 --
 ALTER TABLE `prioridades`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `codigo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `profile_123`
 --
 ALTER TABLE `profile_123`
-  MODIFY `id_profile` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_profile` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `profile_3213`
 --
 ALTER TABLE `profile_3213`
-  MODIFY `id_profile` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_profile` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `profile_admin`
 --
 ALTER TABLE `profile_admin`
-  MODIFY `id_profile` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_profile` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `turnos`
 --
 ALTER TABLE `turnos`
-  MODIFY `id_turno` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_turno` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

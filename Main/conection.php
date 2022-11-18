@@ -1,7 +1,10 @@
 <?php
-
+   
+    ini_set('display_startup_errors',1); 
+    ini_set('display_errors',1);
+    error_reporting(-1);
      //conectamos Con el servidor
-    $host ="localhost";
+    $host ="192.168.88.62";
     $user ="root";
     $pass ="";
     $db="hospital_blue";

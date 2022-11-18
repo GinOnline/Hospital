@@ -320,7 +320,7 @@ else{
       }
       else{
         $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND zona = (SELECT especialidad FROM register WHERE name2 = '".$_SESSION['username']."') AND
-        (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
+        (title LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
         ORDER BY " . $seleccionador . "";
       }
    
@@ -362,7 +362,7 @@ else{
             <a href="informe_paciente.php?turno=<?php echo $fila["id_turno"];?>" style="text-decoration: none; color:black;">
 
 
-            <strong class="card_title"><?php echo ' ' . $fila["name_paciente"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
+            <strong class="card_title"><?php echo ' ' . $fila["title"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
                                         ?></strong>
             <span class="info-container">
               <?php
@@ -373,7 +373,7 @@ else{
             else{ alert('Operación cancelada');}" title="Marcar como solucionado" value="X" class="fas fa-times-circle" <?php print('id = " ' . $fila['id_turno'] . '" ') ?></input>
 
               <input name="id_card" <?php echo ' value = "' . $fila['id_turno'] . '" ' ?> style="display: none">
-              <p id="text1">Diagnostico: <?php print($fila['diagnos']); ?></p>
+              <p id="text1">Diagnostico: <?php print($fila['description']); ?></p>
               <p id="text1">Medicamentos: <?php print($fila['medicamentos']); ?></p>
 
               <p class="fecha"><?php print($fila['time_estimated']); ?></p>

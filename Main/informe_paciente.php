@@ -223,9 +223,9 @@ if (!isset($usuario)) {
 
             <div class="col-12 row" style="align-items:center; overflow:auto">
                 <!--Peticiones -->
-                <h2 class="col-6 btn_title">Informe Paciente <?php echo ' ' . $fila["name_paciente"]. ' ' .$fila["surname"];?></h2>
+                <h2 class="col-6 btn_title">Informe Paciente <?php echo ' ' . $fila["title"]. ' ' .$fila["surname"];?></h2>
                 <a href = "informe.pdf" download="informe.pdf" class="buttonDownload col-2" style="margin-right:2%;">Descargar PDF</a>
-                <a href = "historial.php?seachbar_input=<?php echo $fila["name_paciente"];?>" style = "position:absolute; bottom:25px; right:50px; border-radius: 15px" class="btn btn-primary col-2">Historial clinico</a>
+                <a href = "historial.php?seachbar_input=<?php echo $fila["title"];?>" style = "position:absolute; bottom:25px; right:50px; border-radius: 15px" class="btn btn-primary col-2">Historial clinico</a>
             </div>
         </div>
         <br>
@@ -243,7 +243,7 @@ if (!isset($usuario)) {
         <div class="row justify-content-center">
             <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
                 <h4>Diagnostico General</h4>
-                <p><?php echo $fila["diagnos"];?></p>
+                <p><?php echo $fila["description"];?></p>
             </div>
         </div>
         <br>
