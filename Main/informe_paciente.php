@@ -6,29 +6,25 @@ include 'conection.php';
 session_start();
 $usuario = $_SESSION['username'];
 
-if(isset($_SESSION['admin']))
-{
-  $HideForAdmin = 'style = "display:none;"';
-  $HideForUser = " ";
-
-}
-else{
-  $HideForAdmin  = " ";
-  $HideForUser  = $HideForAdmin = 'style = "display:none;"';
+if (isset($_SESSION['admin'])) {
+    $HideForAdmin = 'style = "display:none;"';
+    $HideForUser = " ";
+} else {
+    $HideForAdmin  = " ";
+    $HideForUser  = $HideForAdmin = 'style = "display:none;"';
 }
 
 
 if (!isset($usuario)) {
 
     header('location: login.php');
-  }
-  if (isset($_GET['turno'])) {
+}
+if (isset($_GET['turno'])) {
     $_SESSION['turno'] = $_GET['turno'];
-  }
-  else{
+} else {
     $_SESSION['turno'] = 0;
-  }
-  ?>
+}
+?>
 
 <head>
 
@@ -119,6 +115,17 @@ if (!isset($usuario)) {
                                 </a>
                             </div>
 
+                            <!-- Dashboard -->
+
+                            <div class="sb6" <?php echo $HideForUser; ?>>
+                                <center>
+                                    <hr color="gray">
+                                </center>
+                                <a class="side-links nav-link px-3" href="dashboard.php">
+                                    <span class="me-2 side-links-text"><i class="fas fa-chart-line"></i></i>Dashboard</span>
+                                </a>
+                            </div>
+
                             <!-- Register -->
 
                             <div class="sb3">
@@ -202,71 +209,78 @@ if (!isset($usuario)) {
     <br>
     <br>
     <br>
-     <?php  
+    <?php
 
-        $sql = "SELECT * FROM turnos WHERE id_turno = ". $_SESSION['turno']." ";
-        $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
+    $sql = "SELECT * FROM turnos WHERE id_turno = " . $_SESSION['turno'] . " ";
+    $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
-        if (mysqli_num_rows($resultado) == 0) {
+    if (mysqli_num_rows($resultado) == 0) {
 
-            header("Location: index.php");
-        }
+        header("Location: index.php");
+    }
 
 
 
-        //Generacion de las peticiones (cards)
-        while ($fila = mysqli_fetch_array($resultado)) {
+    //Generacion de las peticiones (cards)
+    while ($fila = mysqli_fetch_array($resultado)) {
 
-        ?>               
-    <div style="margin-left:10%;--bs-gutter-x:0;">
-        <div class="row justify-content-center --bs-gutter-x:0;">
+    ?>
+        <div style="margin-left:10%;--bs-gutter-x:0;">
+            <div class="row justify-content-center --bs-gutter-x:0;">
 
-            <div class="col-12 row" style="align-items:center; overflow:auto">
-                <!--Peticiones -->
-                <h2 class="col-6 btn_title">Informe Paciente <?php echo ' ' . $fila["name_paciente"]. ' ' .$fila["surname"];?></h2>
-                <a href = "informe.pdf" download="informe.pdf" class="buttonDownload col-2" style="margin-right:2%;">Descargar PDF</a>
-                <a href = "historial.php?seachbar_input=<?php echo $fila["name_paciente"];?>" style = "position:absolute; bottom:25px; right:50px; border-radius: 15px" class="btn btn-primary col-2">Historial clinico</a>
-            </div>
-        </div>
-        <br>
-        <div class="row justify-content-center">
-            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-                <div class="col-5 row">
-                    <h4>Hora ingreso: <?php echo $fila["time"];?></h4>
-                </div>
-                <div class="col-3 row">
-                    <h4>Sala <?php echo $fila["zona"];?></h4>
+                <div class="col-12 row" style="align-items:center; overflow:auto">
+                    <!--Peticiones -->
+                    <h2 class="col-5 btn_title">Informe Paciente</h2>
+                    <a id="downloadPDF" href="informe.pdf" download="informe.pdf" class="buttonDownload col-2" style="margin-right:2%;">Descargar PDF</a>
+                    <a id="downloadCSV" href="informe.csv" download="informe.csv" class="buttonDownload col-2" >Descargar CSV</a>
+                    <a href="historial.php?seachbar_input=<?php echo $fila["name_paciente"]; ?>" class="btn btn-primary col-2 buttonHistorial">Historial clinico</a>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="row justify-content-center">
-            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-                <h4>Diagnostico General</h4>
-                <p><?php echo $fila["diagnos"];?></p>
+            <br><br>
+            <div class="row justify-content-center">
+                <div class="row justify-content-center col-8 info-ingre" >
+                    <h4 style="font-size: 28px;"><span style="font-weight: bold;">Nombre: </span><?php echo ' ' . $fila["name_paciente"] . ' ' . $fila["surname"]; ?></h4>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+                    <div class="col-6 row">
+                        <center><h4 style="padding: 4.5%;">Hora ingreso: <?php echo $fila["time"]; ?></h4></center>
+                    </div>
+                    <div class="col-6 row">
+                    <center><h4 style="padding: 4.5%;">Sala de <?php echo $fila["zona"]; ?></h4></center>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+                    <h4>Diagnostico General</h4>
+                    <p><?php echo $fila["diagnos"]; ?></p>
+                </div>
+            </div>
+            <br>
+
+            <div class="row justify-content-center">
+                <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+
+                    <h4 class="col-12">Patologias</h4>
+                    <hp lass="col-5"><?php echo $fila["patologias"]; ?></p>
+
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
+
+                    <h4 class="col-12">Medicamentos previos</h4>
+                    <hp lass="col-5"><?php echo $fila["medicamentos"]; ?></p>
+
+                </div>
             </div>
         </div>
-        <br>
-
-        <div class="row justify-content-center">
-            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-
-                <h4 class="col-12">Patologias</h4>
-                <hp lass="col-5"><?php echo $fila["patologias"];?></p>
-
-            </div>
-        </div>
-        <br>
-        <div class="row justify-content-center">
-            <div class="row justify-content-center col-8 info-ingre" style="border-width:2px;border-style:solid; border-color:black;">
-
-                <h4 class="col-12">Medicamentos previos</h4>
-                <hp lass="col-5"><?php echo $fila["medicamentos"];?></p>
-
-            </div>
-        </div>
-    </div>
-    <?php }?>
+    <?php } ?>
 
 
 

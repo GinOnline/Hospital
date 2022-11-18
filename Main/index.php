@@ -10,13 +10,10 @@ if (!isset($usuario)) {
 
   header('location: login.php');
 }
-if(isset($_SESSION['admin']))
-{
+if (isset($_SESSION['admin'])) {
   $HideForAdmin = 'style = "display:none;"';
   $HideForUser = " ";
-
-}
-else{
+} else {
   $HideForAdmin  = " ";
   $HideForUser  = $HideForAdmin = 'style = "display:none;"';
 }
@@ -66,7 +63,7 @@ else{
 
 <body>
   <header class="bg-dark">
-    <nav class="up_nav"><span style="margin-left:205px; color:white; font-size:35px"><?php echo  $_SESSION['show']?></span>
+    <nav class="up_nav"><span style="margin-left:125px; color:white; font-size:35px"><?php echo  $_SESSION['show'] ?></span>
       <!-- Clock -->
 
       <!-- <ul>
@@ -75,94 +72,95 @@ else{
         </li>
       </ul> -->
 
-      
+
     </nav>
 
     <center>
-        <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
-            <div class="offcanvas-body p-0">
-                <nav class="navbar-dark">
-                    <div class="navbar-nav">
-                        <li>
-                            <div class="text-muted small fw-bold text-uppercase px-3">
-                                <h2 class="logo">
-                                    <a style="text-decoration: none; margin:0;" href="index.php">
-                                        <center><img src="./img/logo.png" height="90px"></center>
-                                    </a>
-                                </h2>
-                            </div>
-                        </li>
+      <div class="offcanvas offcanvas-start sidebar-nav bg-dark" tabindex="-1" id="sidebar">
+        <div class="offcanvas-body p-0">
+          <nav class="navbar-dark">
+            <div class="navbar-nav">
+              <li>
+                <div class="text-muted small fw-bold text-uppercase px-3">
+                  <h2 class="logo">
+                    <a style="text-decoration: none; margin:0;" href="index.php">
+                      <center><img src="./img/logo.png" height="90px"></center>
+                    </a>
+                  </h2>
+                </div>
+              </li>
 
-                        <!-- Inicio -->
+              <!-- Inicio -->
 
-                        <div class="sb1">
-                            <a class="side-links nav-link active px-3" style="margin-top: 20px;" href="index.php">
-                                <span class="me-2 side-links-text"><i class="fas fa-home"></i>Inicio</span>
-                            </a>
-                        </div>
+              <div class="sb1">
+                <a class="side-links nav-link active px-3" style="margin-top: 20px;" href="index.php">
+                  <span class="me-2 side-links-text"><i class="fas fa-home"></i>Inicio</span>
+                </a>
+              </div>
 
-                        <!-- Historial -->
+              <!-- Historial -->
 
-                        <div class="sb2">
-                            <center>
-                                <hr color="gray">
-                            </center>
-                            <a class="side-links nav-link px-3" href="historial.php">
-                                <span class="me-2 side-links-text"><i class="fas fa-history"></i>Historial</span>
-                            </a>
-                        </div>
+              <div class="sb2">
+                <center>
+                  <hr color="gray">
+                </center>
+                <a class="side-links nav-link px-3" href="historial.php">
+                  <span class="me-2 side-links-text"><i class="fas fa-history"></i>Historial</span>
+                </a>
+              </div>
 
-                        <!-- Dashboard -->
+              <!-- Dashboard -->
 
-                        <div class="sb6" <?php echo $HideForUser; ?>>
-                            <center>
-                                <hr color="gray">
-                            </center>
-                            <a class="side-links nav-link px-3" href="dashboard.php">
-                                <span class="me-2 side-links-text"><i class="fas fa-chart-line"></i></i>Dashboard</span>
-                            </a>
-                        </div>
+              <div class="sb6" <?php echo $HideForUser; ?>>
+                <center>
+                  <hr color="gray">
+                </center>
+                <a class="side-links nav-link px-3" href="dashboard.php">
+                  <span class="me-2 side-links-text"><i class="fas fa-chart-line"></i></i>Dashboard</span>
+                </a>
+              </div>
 
-                        <!-- Register -->
+              <!-- Register -->
 
-                        <div class="sb3" <?php echo $HideForUser; ?>>
-                            <div></div>
-                            <center>
-                                <hr color="gray">
-                            </center>
-                            <a class="side-links nav-link px-3" href="register.php">
-                                <span class="me-2 side-links-text"> <i class="fas fa-user-plus"></i>Registro</span>
-                            </a>
-                        </div>
+              <div class="sb3" <?php echo $HideForUser; ?>>
+                <div></div>
+                <center>
+                  <hr color="gray">
+                </center>
+                <a class="side-links nav-link px-3" href="register.php">
+                  <span class="me-2 side-links-text"> <i class="fas fa-user-plus"></i>Registro</span>
+                </a>
+              </div>
 
-                        <!-- Perfil -->
+              <!-- Perfil -->
 
-                        <div class="sb4">
-                            <center>
-                                <hr color="gray" >
-                            </center>
-                            <a class="side-links nav-link px-3" href="profile.php">
-                                <span class="me-2 side-links-text"><i class="fas fa-user-circle"></i>Perfil</span>
-                            </a>
-                        </div>
+              <div class="sb4">
+                <center>
+                  <hr color="gray">
+                </center>
+                <a class="side-links nav-link px-3" href="profile.php">
+                  <span class="me-2 side-links-text"><i class="fas fa-user-circle"></i>Perfil</span>
+                </a>
+              </div>
 
-                        <!-- LogOut -->
+              <!-- LogOut -->
 
-                        <div class="sb5">
-                            <center>
-                                <hr color="gray">
-                            </center>
-                            <a class="side-links nav-link px-3" href="close.php">
-                                <span class="me-2 side-links-text"><i class="fas fa-sign-out-alt"></i> LogOut</span>
-                            </a>
-                        </div>
+              <div class="sb5">
+                <center>
+                  <hr color="gray">
+                </center>
+                <a class="side-links nav-link px-3" href="close.php">
+                  <span class="me-2 side-links-text"><i class="fas fa-sign-out-alt"></i> LogOut</span>
+                </a>
+              </div>
 
-                        </li>
-                        <li>
-                    </div>
-                </nav>
+              </li>
+              <li>
             </div>
-        </div></center>
+          </nav>
+        </div>
+      </div>
+    </center>
 
 
 
@@ -214,8 +212,8 @@ else{
         <h2 class="col-5 btn_title">Llamados</h2>
 
         <!--Agregar nueva -->
-        <a class="col-2" href="form_turno.php" <?php echo $HideForUser; ?>>
-          <button class="icon-btn add-btn">
+        <a class="col-4" href="form_turno.php" <?php echo $HideForUser; ?>>
+          <button  class="icon-btn add-btn">
             <div class="add-icon"></div>
             <div class="btn-txt">Nuevo llamado</div>
           </button>
@@ -311,25 +309,22 @@ else{
 
 
 
-      if(isset($_SESSION['admin']))
-      {
+      if (isset($_SESSION['admin'])) {
         $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND
         (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
         ORDER BY " . $seleccionador . "";
-
-      }
-      else{
-        $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND zona = (SELECT especialidad FROM register WHERE name2 = '".$_SESSION['username']."') AND
+      } else {
+        $sql = "SELECT * FROM turnos WHERE status = 'PENDING' AND zona = (SELECT especialidad FROM register WHERE name2 = '" . $_SESSION['username'] . "') AND
         (name_paciente LIKE '%" . $searchbar . "%' OR surname LIKE '%" . $searchbar . "%' OR dni LIKE '%" . $searchbar . "%' OR zona LIKE '%" . $searchbar . "%')  
         ORDER BY " . $seleccionador . "";
       }
-   
+
       $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
       if (mysqli_num_rows($resultado) == 0) { ?>
         <!-- Add card -->
 
-            <span class="vacio col-7">No tienes llamados pendientes</span>
+        <span class="vacio col-7">No tienes llamados pendientes</span>
 
       <?php
       }
@@ -357,12 +352,11 @@ else{
 
       ?>
 
-       
-          <form class="card col-3" action="changeStatus.php" method="POST"> 
-            <a href="informe_paciente.php?turno=<?php echo $fila["id_turno"];?>" style="text-decoration: none; color:black;">
 
-
-            <strong class="card_title"><?php echo ' ' . $fila["name_paciente"]. ' '. $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
+        <form class="card col-3" action="changeStatus.php" method="POST">
+          <a href="informe_paciente.php?turno=<?php echo $fila["id_turno"]; ?>" style="text-decoration: none; color:black;">
+          <br>
+            <strong class="card_title"><?php echo ' ' . $fila["name_paciente"] . ' ' . $fila["surname"] //estaba testeando como quedaba con la cantidad en el titulo
                                         ?></strong>
             <span class="info-container">
               <?php
@@ -381,8 +375,9 @@ else{
 
             </span>
 
-          </a></form>
-        
+          </a>
+        </form>
+
 
 
       <?php

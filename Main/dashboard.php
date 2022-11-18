@@ -208,7 +208,7 @@ if (isset($_SESSION['admin'])) {
                         <div class="card h-100">
                             <div class="card-header">
                                 <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
-                                Alarma Azul
+                                Alarma Código Azul
                             </div>
                             <div class="card-body">
                                 <canvas class="chart" width="400" height="200"></canvas><br>

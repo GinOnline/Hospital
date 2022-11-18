@@ -1,37 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
 body,
 button {
   font-family: "Inter", sans-serif;
 }
+
 :root {
   --offcanvas-width: 200px;
   --topNavbarHeight: 0px;
 }
+
 .sidebar-nav {
   width: 12%;
   background-color: #b8e9d0;
 }
+
 .sidebar-link {
   display: flex;
   align-items: center;
 }
+
 .sidebar-link .right-icon {
   display: inline-flex;
 }
+
 .sidebar-link[aria-expanded="true"] .right-icon {
   transform: rotate(180deg);
 }
+
 @media (min-width: 992px) {
   body {
     overflow: auto !important;
   }
+
   main {
     margin-left: var(--offcanvas-width);
   }
+
   /* this is to remove the backdrop */
   .offcanvas-backdrop::before {
     display: none;
   }
+
   .sidebar-nav {
     -webkit-transform: none;
     transform: none;
@@ -41,7 +51,7 @@ button {
   }
 }
 
-.dashboardBox{
+.dashboardBox {
   background-color: #EB6440;
   border-radius: 10px;
   width: 90%;
@@ -49,7 +59,7 @@ button {
   height: 600px;
 }
 
-.dashboardMT{
+.dashboardMT {
   font-size: 20px;
   text-align: center;
   justify-content: center;
@@ -63,69 +73,86 @@ button {
   font-weight: 500;
 }
 
-.dashboardST{
+.dashboardST {
   font-size: 17px;
   text-align: center;
   margin-top: 5%;
 }
-.navbar-nav li{
+
+.navbar-nav li {
   overflow-y: hidden;
 }
 
-.sidebar-nav{
+.sidebar-nav {
   padding-top: 50px;
 }
 
-.side-links-text{
+.side-links-text {
   font-size: 16px;
 }
 
-.offcanvas hr{
+.offcanvas hr {
   width: 80%;
   border: 1px solid rgb(105, 105, 105);
   align-items: center;
   align-content: center;
 }
-.info-ingre{
+
+.info-ingre {
   padding: 10px;
   border-radius: 14px;
-  
+
 }
+
 .buttonDownload {
   display: inline-block;
   position: relative;
   padding: 10px 25px;
-  background-color: #4CC713;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-decoration: none;
   font-size: 0.9em;
   text-align: center;
   text-indent: 15px;
   border: none;
- }
- 
- .buttonDownload:hover {
+  font-weight: 700;
+}
+
+#downloadCSV {
+  background-color: #4CC713;
+}
+
+#downloadCSV:hover {
   background-color: #45a21a;
   color: white;
- }
- 
- .buttonDownload:before, .buttonDownload:after {
+}
+
+#downloadPDF {
+  background-color: #dd0000;
+}
+
+#downloadPDF:hover {
+  background-color: #ad1414;
+  color: white;
+}
+
+.buttonDownload:before,
+.buttonDownload:after {
   content: ' ';
   display: block;
   position: absolute;
   left: 15px;
   top: 52%;
- }
- 
- .buttonDownload:before {
+}
+
+.buttonDownload:before {
   width: 10px;
   height: 2px;
   border-style: solid;
   border-width: 0 2px 2px;
- }
- 
- .buttonDownload:after {
+}
+
+.buttonDownload:after {
   width: 0;
   height: 0;
   margin-left: 3px;
@@ -136,34 +163,78 @@ button {
   border-top-color: inherit;
   animation: downloadArrow 1s linear infinite;
   animation-play-state: paused;
- }
- 
- .buttonDownload:hover:before {
+}
+
+.buttonDownload:hover:before {
   border-color: #cdefbd;
- }
- 
- .buttonDownload:hover:after {
+}
+
+.buttonDownload:hover:after {
   border-top-color: #cdefbd;
   animation-play-state: running;
- }
- 
- @keyframes downloadArrow {
+}
+
+@keyframes downloadArrow {
   0% {
-   margin-top: -7px;
-   opacity: 1;
+    margin-top: -7px;
+    opacity: 1;
   }
- 
+
   0.001% {
-   margin-top: -15px;
-   opacity: 0.4;
+    margin-top: -15px;
+    opacity: 0.4;
   }
- 
+
   50% {
-   opacity: 1;
+    opacity: 1;
   }
- 
+
   100% {
-   margin-top: 0;
-   opacity: 0.4;
+    margin-top: 0;
+    opacity: 0.4;
   }
- }
+}
+
+.buttonHistorial {
+  position: fixed;
+  right: 2%;
+  bottom: 5%;
+  border-radius: 15px;
+  width: 10%;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(8, 88, 88);
+  border-color: rgb(8, 88, 88);;
+}
+
+.buttonHistorial:hover{
+  background-color: rgb(8, 66, 66);
+}
+
+.buttonHistorial:active{
+  color: rgb(8, 66, 66);
+  background-color: rgb(125, 194, 194);;
+}
+
+.buttonHistorial:focus{
+  color: rgb(8, 66, 66);
+  background-color: rgb(125, 194, 194);;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #3a6b77;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f7f7f7;
+  border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c7c7c7;
+  border-radius: 5rem;
+}
