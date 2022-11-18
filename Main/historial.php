@@ -111,7 +111,7 @@ if (isset($_SESSION['admin'])) {
                         
                         <!-- Dashboard -->
 
-                        <div class="sb6">
+                        <div class="sb6" <?php echo $HideForUser; ?>>
                             <center>
                                 <hr color="gray">
                             </center>
@@ -122,8 +122,8 @@ if (isset($_SESSION['admin'])) {
 
                         <!-- Register -->
 
-                        <div class="sb3">
-                            <div <?php echo $HideForUser; ?>></div>
+                        <div class="sb3" <?php echo $HideForUser; ?>>
+                            <div></div>
                             <center>
                                 <hr color="gray">
                             </center>

@@ -169,22 +169,22 @@ echo '<!DOCTYPE html>
         <form action="update-profile.php" method="POST" enctype="multipart/form-data">
            
             <div class="editProfilePicture">
-            <img src="'.$data_profile[3].'" width="20%" id="profile" height="20%"><br><br>
-            <center><label style="color: white; font-size: 18px; margin-bottom: 1.5%;">Sube una imagen:</label>
-            <input id="inputFileBT" type="file" name="uploadedFile" />
-            <button name="upload_file_btn">Guardar Imágen</button></center></div>
-            
-            <label class="textoRectagulo">Estado</label><br>
-            <input class="inputTexto" type="text" placeholder="'.$data_profile[0].'" name="status" value="'.$data_profile[0].'"><br>
-            
-    
-            <label class="textoRectagulo">Biografía</label><br>
-            <input class="inputTexto" type="text" placeholder="'.$data_profile[1].'" name="biography" value="'.$data_profile[1].'" ><br>            
-            
-            
-            <label class="textoRectagulo">Teléfono</label><br>
-            <input class="inputTexto" type="numeric" placeholder="'.$data_profile[2].'" name="phone" value="'.$data_profile[2].'""><br>
+                <img src="'.$data_profile[3].'" width="25%" id="profile" height="25%" style = "border-radius:40%; border: 2px solid black;"><br><br>
+                <center><label style="color: white; font-size: 18px; margin-bottom: 1.5%;">Sube una imagen:</label>
+                <input id="inputFileBT" type="file" name="uploadedFile" />
+                <button name="upload_file_btn">Guardar Imágen</button></center></div>
+                
+                <label class="textoRectagulo">Estado</label><br>
+                <input class="inputTexto" type="text" placeholder="'.$data_profile[0].'" name="status" value="'.$data_profile[0].'"><br>
+                
         
+                <label class="textoRectagulo">Biografía</label><br>
+                <input class="inputTexto" type="text" placeholder="'.$data_profile[1].'" name="biography" value="'.$data_profile[1].'" ><br>            
+
+                
+                <label class="textoRectagulo">Teléfono</label><br>
+                <input class="inputTexto" type="numeric" placeholder="'.$data_profile[2].'" name="phone" value="'.$data_profile[2].'""><br>
+            
             <div class="saveProfileData"><center><button name="done">Guardar</button></center></div>
         </form>
     </div>
