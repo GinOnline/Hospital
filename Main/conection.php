@@ -4,7 +4,7 @@
     ini_set('display_errors',1);
     error_reporting(-1);
      //conectamos Con el servidor
-    $host ="192.168.88.62";
+    $host ="localhost";
     $user ="root";
     $pass ="";
     $db="hospital_blue";

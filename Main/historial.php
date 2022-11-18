@@ -288,8 +288,8 @@ if (isset($_SESSION['admin'])) {
 
                                 ?>
                                 <optgroup label="Ordenar por Nombre">
-                                    <option value="name_paciente ASC">A-Z</option>
-                                    <option value="name_paciente DESC">Z-A</option>
+                                    <option value="title ASC">A-Z</option>
+                                    <option value="title DESC">Z-A</option>
                                 </optgroup>
 
                                 <optgroup label="Ordenar por fecha">
@@ -323,7 +323,7 @@ if (isset($_SESSION['admin'])) {
                         if (!empty($_POST['select_ordenador'])) {
                             $seleccionador = $_POST['select_ordenador'];
                         } else {
-                            $seleccionador = "id_turno";
+                            $seleccionador = "id";
                         }
 
                         // Definimos el final prompt seachbar
@@ -408,9 +408,9 @@ if (isset($_SESSION['admin'])) {
                             <tr>
 
                                 <!-- <td scope="row"><input type="checkbox" name="" id=""></td> -->
-                                <th><?php print($fila['id_turno']); ?></th>
+                                <th><?php print($fila['id']); ?></th>
                                 <td><?php print($fila['dni']); ?></td>
-                                <td><?php print($fila['name_paciente'] . ' ' . $fila['surname']); ?></td>
+                                <td><?php print($fila['title'] . ' ' . $fila['surname']); ?></td>
                                 <td><?php print($fila['description']); ?></td>
                                 <td><?php print($fila['medicamentos']); ?></td>
                                 <td><?php print($fila['patologias']); ?></td>

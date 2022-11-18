@@ -204,7 +204,7 @@ if (!isset($usuario)) {
     <br>
      <?php  
 
-        $sql = "SELECT * FROM turnos WHERE id_turno = ". $_SESSION['turno']." ";
+        $sql = "SELECT * FROM turnos WHERE id = ". $_SESSION['turno']." ";
         $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
         if (mysqli_num_rows($resultado) == 0) {

@@ -27,14 +27,14 @@ if (!empty($_POST['uploadBtn'])) {
     
 
     echo $dni;
-    $sql = "SELECT name_paciente,surname FROM paciente WHERE dni = '".$dni."' ";
+    $sql = "SELECT title,surname FROM paciente WHERE dni = '".$dni."' ";
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 
-        $name_person = $row["name_paciente"];
+        $name_person = $row["title"];
         $surname = $row["surname"];
         
     }
